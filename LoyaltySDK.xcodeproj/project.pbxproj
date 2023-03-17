@@ -10,6 +10,8 @@
 		28C7199BEC5559636CC10762 /* Pods_LoyaltySDK_LoyaltySDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B11250EC983DEB8CBC261FF /* Pods_LoyaltySDK_LoyaltySDKTests.framework */; };
 		5806F19F29C40C00002D0390 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F19A29C40C00002D0390 /* KeychainKey.swift */; };
 		5806F1A029C40C00002D0390 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F19B29C40C00002D0390 /* Keychain.swift */; };
+		5806F1A429C44847002D0390 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F1A329C44847002D0390 /* Constants.swift */; };
+		5806F1A629C4486E002D0390 /* Constants+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F1A529C4486E002D0390 /* Constants+API.swift */; };
 		58A89C5F29C2EEC20040CD7C /* LoyaltySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 58A89C5E29C2EEC20040CD7C /* LoyaltySDK.docc */; };
 		58A89C6529C2EEC20040CD7C /* LoyaltySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58A89C5A29C2EEC20040CD7C /* LoyaltySDK.framework */; };
 		58A89C6A29C2EEC20040CD7C /* LoyaltySDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A89C6929C2EEC20040CD7C /* LoyaltySDKTests.swift */; };
@@ -33,6 +35,8 @@
 		3DDDD176E6066CF68DDF3042 /* Pods_LoyaltySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoyaltySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5806F19A29C40C00002D0390 /* KeychainKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
 		5806F19B29C40C00002D0390 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		5806F1A329C44847002D0390 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5806F1A529C4486E002D0390 /* Constants+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+API.swift"; sourceTree = "<group>"; };
 		58A89C5A29C2EEC20040CD7C /* LoyaltySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoyaltySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58A89C5D29C2EEC20040CD7C /* LoyaltySDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoyaltySDK.h; sourceTree = "<group>"; };
 		58A89C5E29C2EEC20040CD7C /* LoyaltySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = LoyaltySDK.docc; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 		5806F19329C40AD1002D0390 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				5806F1A329C44847002D0390 /* Constants.swift */,
+				5806F1A529C4486E002D0390 /* Constants+API.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -392,6 +398,8 @@
 			files = (
 				58A89C5F29C2EEC20040CD7C /* LoyaltySDK.docc in Sources */,
 				5806F1A029C40C00002D0390 /* Keychain.swift in Sources */,
+				5806F1A629C4486E002D0390 /* Constants+API.swift in Sources */,
+				5806F1A429C44847002D0390 /* Constants.swift in Sources */,
 				58A89C7629C2EF610040CD7C /* NimbleLoyaltySDK.swift in Sources */,
 				5806F19F29C40C00002D0390 /* KeychainKey.swift in Sources */,
 			);
