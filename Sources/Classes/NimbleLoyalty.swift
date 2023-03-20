@@ -5,7 +5,7 @@
 //  Created by David Bui on 16/03/2023.
 //
 
-import Foundation
+import Combine
 
 public final class NimbleLoyalty {
 
