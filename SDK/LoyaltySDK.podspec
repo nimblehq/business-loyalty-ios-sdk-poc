@@ -3,7 +3,6 @@ Pod::Spec.new do |s|
   s.version             = '0.0.1'
   s.summary             = 'LoyaltySDK'
   s.homepage            = 'https://github.com/nimblehq/business-loyalty-ios-sdk-poc'
-  s.static_framework    = true
   s.author              = { 'David' => 'duc@nimblehq.co' }
   s.license             = { :type => "MIT", :text => "MIT License" }
   s.platform            = :ios, "14.0"
