@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct APIReward: Decodable, Reward {
+public struct APIReward: Decodable, Reward {
 
     var id: String?
     var organizationId: String?
