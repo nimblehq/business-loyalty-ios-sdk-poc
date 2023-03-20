@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|  
-  s.name                = 'LoyaltySDK' # Name for your pod
+  s.name                = 'LoyaltySDK'
   s.version             = '0.0.1'
   s.summary             = 'LoyaltySDK'
   s.homepage            = 'https://github.com/nimblehq/business-loyalty-ios-sdk-poc'
