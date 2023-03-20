@@ -10,32 +10,13 @@ import Moya
 
 final class NetworkAPI: NetworkAPIProtocol {
 
-    enum DecoderType {
-
-        case emptyJson, jsonAPI
-    }
-
-    enum StatusCode: Int {
-
-        case unauthenticated = 401
-    }
-
-    private var keychain: KeychainProtocol
-    private var notificationCenter: NotificationCenter
-    private let provider: MoyaProvider<RequestConfiguration>
-    private let decoder: JSONDecoder
-
-    init(
-        keychain: KeychainProtocol = Keychain.default,
-        notificationCenter: NotificationCenter = NotificationCenter.default,
-        provider: MoyaProvider<RequestConfiguration> = MoyaProvider<RequestConfiguration>(plugins: [AuthPlugin()]),
-        decoder: JSONDecoder = JSONDecoder()
-    ) {
-        self.keychain = keychain
-        self.notificationCenter = notificationCenter
-        self.provider = provider
-        self.decoder = decoder
-    }
+    private let keychain = Keychain.default
+    private let provider = MoyaProvider<RequestConfiguration>(plugins: [AuthPlugin()])
+    private let decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }()
 
     func performRequest<T>(
         _ configuration: RequestConfiguration,
