@@ -26,11 +26,11 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
     var path: String {
         switch self {
         case .rewards:
-            return "rewards"
-        case let .redeemRewards(code):
-            return "redeemed_rewards/\(code)/use"
+            return "rewards.json"
+        case let .redeemRewards(id):
+            return "rewards/\(id)/redeem.json"
         case .redeemHistory:
-            return "redeemed_rewards"
+            return "redeemed_rewards.json"
         }
     }
 
