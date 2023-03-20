@@ -1,0 +1,56 @@
+platform :ios, '14.0'
+use_frameworks!
+inhibit_all_warnings!
+
+def testing_pods
+  pod 'Quick'
+  pod 'Nimble'
+  pod 'Sourcery', '1.8.0'
+  pod 'SwiftFormat/CLI'
+end
+
+target 'LoyaltySDKSample' do
+  # UI
+  pod 'Kingfisher'
+  pod 'FlowStacks'
+
+  # Network
+  pod 'Moya/Combine'
+
+  # Storage
+  pod 'KeychainAccess'
+
+  # Tools
+  pod 'IQKeyboardManagerSwift'
+  pod 'R.swift'
+  pod 'Factory'
+
+  # Development
+  pod 'SwiftLint'
+
+  # LoyaltySDK
+  pod ‘LoyaltySDK’, :path => ‘../SDK’
+
+  target 'LoyaltySDKSampleTests' do
+    inherit! :search_paths
+    testing_pods
+  end
+
+  target 'LoyaltySDKSampleUITests' do
+    testing_pods
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+      if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+        target.build_configurations.each do |config|
+            config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+        end
+      end
+    end
+  end
+end
