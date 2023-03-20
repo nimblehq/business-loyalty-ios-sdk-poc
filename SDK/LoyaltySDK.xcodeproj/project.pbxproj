@@ -28,6 +28,8 @@
 		58CDDBEB29C83C97001A2069 /* APIReward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBEA29C83C97001A2069 /* APIReward.swift */; };
 		58CDDBEF29C83E41001A2069 /* RewardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBEE29C83E41001A2069 /* RewardState.swift */; };
 		58CDDBF129C83E55001A2069 /* RewardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBF029C83E55001A2069 /* RewardType.swift */; };
+		58DDF0A429C85D3600DA28CD /* RewardRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDF0A329C85D3600DA28CD /* RewardRepositoryProtocol.swift */; };
+		58DDF0A729C85DAE00DA28CD /* RewardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDF0A629C85DAE00DA28CD /* RewardRepository.swift */; };
 		BED587F370A1378A6E51F1E3 /* Pods_LoyaltySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDDD176E6066CF68DDF3042 /* Pods_LoyaltySDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		58CDDBEA29C83C97001A2069 /* APIReward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIReward.swift; sourceTree = "<group>"; };
 		58CDDBEE29C83E41001A2069 /* RewardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardState.swift; sourceTree = "<group>"; };
 		58CDDBF029C83E55001A2069 /* RewardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardType.swift; sourceTree = "<group>"; };
+		58DDF0A329C85D3600DA28CD /* RewardRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardRepositoryProtocol.swift; sourceTree = "<group>"; };
+		58DDF0A629C85DAE00DA28CD /* RewardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardRepository.swift; sourceTree = "<group>"; };
 		9B11250EC983DEB8CBC261FF /* Pods_LoyaltySDK_LoyaltySDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoyaltySDK_LoyaltySDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A513F649B263140A4BCDAE /* Pods-LoyaltySDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDK.release.xcconfig"; path = "Target Support Files/Pods-LoyaltySDK/Pods-LoyaltySDK.release.xcconfig"; sourceTree = "<group>"; };
 		EEC606336A3B55FB21DD47A1 /* Pods-LoyaltySDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDK.debug.xcconfig"; path = "Target Support Files/Pods-LoyaltySDK/Pods-LoyaltySDK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				5806F19729C40BA6002D0390 /* NetworkAPI */,
+				58DDF0A529C85D9400DA28CD /* Repositories */,
 				5806F19829C40BEA002D0390 /* Storage */,
 			);
 			path = Data;
@@ -126,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				58CDDBE729C83BDC001A2069 /* Entities */,
+				58DDF0A229C85D1F00DA28CD /* Interfaces */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -271,6 +277,22 @@
 				58CDDBF029C83E55001A2069 /* RewardType.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		58DDF0A229C85D1F00DA28CD /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				58DDF0A329C85D3600DA28CD /* RewardRepositoryProtocol.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		58DDF0A529C85D9400DA28CD /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				58DDF0A629C85DAE00DA28CD /* RewardRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		75A4CBA2CB10244A19712F56 /* Frameworks */ = {
@@ -479,12 +501,14 @@
 				5806F1A629C4486E002D0390 /* Constants+API.swift in Sources */,
 				58CDDBE129C836EB001A2069 /* NetworkAPIProtocol.swift in Sources */,
 				5806F1A429C44847002D0390 /* Constants.swift in Sources */,
+				58DDF0A729C85DAE00DA28CD /* RewardRepository.swift in Sources */,
 				58CDDBDF29C835C4001A2069 /* NetworkAPI.swift in Sources */,
 				58CDDBE429C83812001A2069 /* Publisher+Observable.swift in Sources */,
 				58CDDBF129C83E55001A2069 /* RewardType.swift in Sources */,
 				58CDDBD729C83491001A2069 /* Typealiases.swift in Sources */,
 				58A89C7629C2EF610040CD7C /* NimbleLoyaltySDK.swift in Sources */,
 				58CDDBD529C83359001A2069 /* RequestConfiguration.swift in Sources */,
+				58DDF0A429C85D3600DA28CD /* RewardRepositoryProtocol.swift in Sources */,
 				5806F19F29C40C00002D0390 /* KeychainKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
