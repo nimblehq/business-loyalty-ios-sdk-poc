@@ -16,7 +16,7 @@ public final class NimbleLoyaltySDK {
     private init() {}
 
     public func setClientId(_ clientId: String) {
-        guard clientId.isEmpty else {
+        guard !clientId.isEmpty else {
             fatalError("Client Id must not be empty")
         }
         self.clientId = clientId
