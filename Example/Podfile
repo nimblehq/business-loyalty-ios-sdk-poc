@@ -29,7 +29,7 @@ target 'LoyaltySDKSample' do
   pod 'SwiftLint'
 
   # LoyaltySDK
-  pod ‘LoyaltySDK’, :path => ‘../SDK’
+  pod ‘NimbleLoyalty’, :path => ‘../’
 
   target 'LoyaltySDKSampleTests' do
     inherit! :search_paths

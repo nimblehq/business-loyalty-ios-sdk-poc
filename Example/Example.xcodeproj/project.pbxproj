@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		58CDDBA829C80B55001A2069 /* LoyaltySDKSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBA729C80B55001A2069 /* LoyaltySDKSampleApp.swift */; };
+		4E468EC058E6D107AAB35F06 /* Pods_LoyaltySDKSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E843A450C6AAB9FA934289 /* Pods_LoyaltySDKSample.framework */; };
+		58CDDBA829C80B55001A2069 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBA729C80B55001A2069 /* ExampleApp.swift */; };
 		58CDDBAA29C80B55001A2069 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBA929C80B55001A2069 /* ContentView.swift */; };
 		58CDDBAC29C80B57001A2069 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58CDDBAB29C80B57001A2069 /* Assets.xcassets */; };
 		58CDDBAF29C80B57001A2069 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58CDDBAE29C80B57001A2069 /* Preview Assets.xcassets */; };
 		58CDDBB929C80B57001A2069 /* LoyaltySDKSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBB829C80B57001A2069 /* LoyaltySDKSampleTests.swift */; };
 		58CDDBC329C80B57001A2069 /* LoyaltySDKSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBC229C80B57001A2069 /* LoyaltySDKSampleUITests.swift */; };
 		58CDDBC529C80B57001A2069 /* LoyaltySDKSampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBC429C80B57001A2069 /* LoyaltySDKSampleUITestsLaunchTests.swift */; };
-		5F2D914F5961466C9D589E1E /* Pods_LoyaltySDKSample_LoyaltySDKSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72BF52AB10CC7D742774E27B /* Pods_LoyaltySDKSample_LoyaltySDKSampleUITests.framework */; };
-		78F4F77CA0EC2A8F0E806832 /* Pods_LoyaltySDKSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44B61917D80E445FD4B1D88 /* Pods_LoyaltySDKSample.framework */; };
-		8162FC35766F283167749B7B /* Pods_LoyaltySDKSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F0E96011C6D8D11131DCAE /* Pods_LoyaltySDKSampleTests.framework */; };
+		B98D1F88791FCD6BE12045F3 /* Pods_LoyaltySDKSample_LoyaltySDKSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A61201CA3E07A0133474E2B /* Pods_LoyaltySDKSample_LoyaltySDKSampleUITests.framework */; };
+		CAE131C5C7F68E3DFEA1AEBE /* Pods_LoyaltySDKSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AD531636403C080A262FB5 /* Pods_LoyaltySDKSampleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,25 +37,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F1870A7494E64727351D04E /* Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		11B0A3BBF85CFF95A8786CC6 /* Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.release.xcconfig"; path = "Target Support Files/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
-		58CDDBA429C80B55001A2069 /* LoyaltySDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoyaltySDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		58CDDBA729C80B55001A2069 /* LoyaltySDKSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltySDKSampleApp.swift; sourceTree = "<group>"; };
+		27543CD7DBB5CC884C20D19C /* Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		29E843A450C6AAB9FA934289 /* Pods_LoyaltySDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoyaltySDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F57756238A276D606CAE06F /* Pods-LoyaltySDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDKSample.release.xcconfig"; path = "Target Support Files/Pods-LoyaltySDKSample/Pods-LoyaltySDKSample.release.xcconfig"; sourceTree = "<group>"; };
+		58CDDBA429C80B55001A2069 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58CDDBA729C80B55001A2069 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		58CDDBA929C80B55001A2069 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		58CDDBAB29C80B57001A2069 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58CDDBAE29C80B57001A2069 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		58CDDBB429C80B57001A2069 /* LoyaltySDKSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoyaltySDKSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		58CDDBB429C80B57001A2069 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58CDDBB829C80B57001A2069 /* LoyaltySDKSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltySDKSampleTests.swift; sourceTree = "<group>"; };
-		58CDDBBE29C80B57001A2069 /* LoyaltySDKSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoyaltySDKSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		58CDDBBE29C80B57001A2069 /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58CDDBC229C80B57001A2069 /* LoyaltySDKSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltySDKSampleUITests.swift; sourceTree = "<group>"; };
 		58CDDBC429C80B57001A2069 /* LoyaltySDKSampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltySDKSampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		72BF52AB10CC7D742774E27B /* Pods_LoyaltySDKSample_LoyaltySDKSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoyaltySDKSample_LoyaltySDKSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1387DA43BB93E07DC168CD2 /* Pods-LoyaltySDKSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDKSampleTests.release.xcconfig"; path = "Target Support Files/Pods-LoyaltySDKSampleTests/Pods-LoyaltySDKSampleTests.release.xcconfig"; sourceTree = "<group>"; };
-		C44B61917D80E445FD4B1D88 /* Pods_LoyaltySDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoyaltySDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8C47855976F5821E4B2959E /* Pods-LoyaltySDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDKSample.release.xcconfig"; path = "Target Support Files/Pods-LoyaltySDKSample/Pods-LoyaltySDKSample.release.xcconfig"; sourceTree = "<group>"; };
-		E2F0E96011C6D8D11131DCAE /* Pods_LoyaltySDKSampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoyaltySDKSampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EEA25B02DA642D39D1C08E01 /* Pods-LoyaltySDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDKSample.debug.xcconfig"; path = "Target Support Files/Pods-LoyaltySDKSample/Pods-LoyaltySDKSample.debug.xcconfig"; sourceTree = "<group>"; };
-		F25175F028316B14E2F4F980 /* Pods-LoyaltySDKSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDKSampleTests.debug.xcconfig"; path = "Target Support Files/Pods-LoyaltySDKSampleTests/Pods-LoyaltySDKSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A61201CA3E07A0133474E2B /* Pods_LoyaltySDKSample_LoyaltySDKSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoyaltySDKSample_LoyaltySDKSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		893659DE3F794868DAFF1978 /* Pods-LoyaltySDKSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDKSampleTests.debug.xcconfig"; path = "Target Support Files/Pods-LoyaltySDKSampleTests/Pods-LoyaltySDKSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		96A8E6798232A88EC5FAF671 /* Pods-LoyaltySDKSampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDKSampleTests.release.xcconfig"; path = "Target Support Files/Pods-LoyaltySDKSampleTests/Pods-LoyaltySDKSampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		AF9945C7EEE6ED20EDB2FF60 /* Pods-LoyaltySDKSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDKSample.debug.xcconfig"; path = "Target Support Files/Pods-LoyaltySDKSample/Pods-LoyaltySDKSample.debug.xcconfig"; sourceTree = "<group>"; };
+		B2AD531636403C080A262FB5 /* Pods_LoyaltySDKSampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoyaltySDKSampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA793E8424D8A61917730635 /* Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.release.xcconfig"; path = "Target Support Files/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78F4F77CA0EC2A8F0E806832 /* Pods_LoyaltySDKSample.framework in Frameworks */,
+				4E468EC058E6D107AAB35F06 /* Pods_LoyaltySDKSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8162FC35766F283167749B7B /* Pods_LoyaltySDKSampleTests.framework in Frameworks */,
+				CAE131C5C7F68E3DFEA1AEBE /* Pods_LoyaltySDKSampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F2D914F5961466C9D589E1E /* Pods_LoyaltySDKSample_LoyaltySDKSampleUITests.framework in Frameworks */,
+				B98D1F88791FCD6BE12045F3 /* Pods_LoyaltySDKSample_LoyaltySDKSampleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,34 +89,34 @@
 		58CDDB9B29C80B55001A2069 = {
 			isa = PBXGroup;
 			children = (
-				58CDDBA629C80B55001A2069 /* LoyaltySDKSample */,
-				58CDDBB729C80B57001A2069 /* LoyaltySDKSampleTests */,
-				58CDDBC129C80B57001A2069 /* LoyaltySDKSampleUITests */,
+				58CDDBA629C80B55001A2069 /* Example */,
+				58CDDBB729C80B57001A2069 /* ExampleTests */,
+				58CDDBC129C80B57001A2069 /* ExampleUITests */,
 				58CDDBA529C80B55001A2069 /* Products */,
 				84E4BDC92662457ABE428607 /* Pods */,
-				A6FE17BA41508196E48A975F /* Frameworks */,
+				BB635351983EB95BEE7A4F4D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		58CDDBA529C80B55001A2069 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				58CDDBA429C80B55001A2069 /* LoyaltySDKSample.app */,
-				58CDDBB429C80B57001A2069 /* LoyaltySDKSampleTests.xctest */,
-				58CDDBBE29C80B57001A2069 /* LoyaltySDKSampleUITests.xctest */,
+				58CDDBA429C80B55001A2069 /* Example.app */,
+				58CDDBB429C80B57001A2069 /* ExampleTests.xctest */,
+				58CDDBBE29C80B57001A2069 /* ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		58CDDBA629C80B55001A2069 /* LoyaltySDKSample */ = {
+		58CDDBA629C80B55001A2069 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				58CDDBA729C80B55001A2069 /* LoyaltySDKSampleApp.swift */,
+				58CDDBA729C80B55001A2069 /* ExampleApp.swift */,
 				58CDDBA929C80B55001A2069 /* ContentView.swift */,
 				58CDDBAB29C80B57001A2069 /* Assets.xcassets */,
 				58CDDBAD29C80B57001A2069 /* Preview Content */,
 			);
-			path = LoyaltySDKSample;
+			path = Example;
 			sourceTree = "<group>";
 		};
 		58CDDBAD29C80B57001A2069 /* Preview Content */ = {
@@ -127,43 +127,42 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		58CDDBB729C80B57001A2069 /* LoyaltySDKSampleTests */ = {
+		58CDDBB729C80B57001A2069 /* ExampleTests */ = {
 			isa = PBXGroup;
 			children = (
 				58CDDBB829C80B57001A2069 /* LoyaltySDKSampleTests.swift */,
 			);
-			path = LoyaltySDKSampleTests;
+			path = ExampleTests;
 			sourceTree = "<group>";
 		};
-		58CDDBC129C80B57001A2069 /* LoyaltySDKSampleUITests */ = {
+		58CDDBC129C80B57001A2069 /* ExampleUITests */ = {
 			isa = PBXGroup;
 			children = (
 				58CDDBC229C80B57001A2069 /* LoyaltySDKSampleUITests.swift */,
 				58CDDBC429C80B57001A2069 /* LoyaltySDKSampleUITestsLaunchTests.swift */,
 			);
-			path = LoyaltySDKSampleUITests;
+			path = ExampleUITests;
 			sourceTree = "<group>";
 		};
 		84E4BDC92662457ABE428607 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EEA25B02DA642D39D1C08E01 /* Pods-LoyaltySDKSample.debug.xcconfig */,
-				D8C47855976F5821E4B2959E /* Pods-LoyaltySDKSample.release.xcconfig */,
-				0F1870A7494E64727351D04E /* Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.debug.xcconfig */,
-				11B0A3BBF85CFF95A8786CC6 /* Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.release.xcconfig */,
-				F25175F028316B14E2F4F980 /* Pods-LoyaltySDKSampleTests.debug.xcconfig */,
-				B1387DA43BB93E07DC168CD2 /* Pods-LoyaltySDKSampleTests.release.xcconfig */,
+				AF9945C7EEE6ED20EDB2FF60 /* Pods-LoyaltySDKSample.debug.xcconfig */,
+				3F57756238A276D606CAE06F /* Pods-LoyaltySDKSample.release.xcconfig */,
+				27543CD7DBB5CC884C20D19C /* Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.debug.xcconfig */,
+				EA793E8424D8A61917730635 /* Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.release.xcconfig */,
+				893659DE3F794868DAFF1978 /* Pods-LoyaltySDKSampleTests.debug.xcconfig */,
+				96A8E6798232A88EC5FAF671 /* Pods-LoyaltySDKSampleTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A6FE17BA41508196E48A975F /* Frameworks */ = {
+		BB635351983EB95BEE7A4F4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C44B61917D80E445FD4B1D88 /* Pods_LoyaltySDKSample.framework */,
-				72BF52AB10CC7D742774E27B /* Pods_LoyaltySDKSample_LoyaltySDKSampleUITests.framework */,
-				E2F0E96011C6D8D11131DCAE /* Pods_LoyaltySDKSampleTests.framework */,
+				29E843A450C6AAB9FA934289 /* Pods_LoyaltySDKSample.framework */,
+				7A61201CA3E07A0133474E2B /* Pods_LoyaltySDKSample_LoyaltySDKSampleUITests.framework */,
+				B2AD531636403C080A262FB5 /* Pods_LoyaltySDKSampleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,65 +170,63 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58CDDBA329C80B55001A2069 /* LoyaltySDKSample */ = {
+		58CDDBA329C80B55001A2069 /* Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58CDDBC829C80B57001A2069 /* Build configuration list for PBXNativeTarget "LoyaltySDKSample" */;
+			buildConfigurationList = 58CDDBC829C80B57001A2069 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				AA8BC331781AACBB20ED8C92 /* [CP] Check Pods Manifest.lock */,
+				B3FDCFD9F4DAF1058266B772 /* [CP] Check Pods Manifest.lock */,
 				58CDDBA029C80B55001A2069 /* Sources */,
 				58CDDBA129C80B55001A2069 /* Frameworks */,
 				58CDDBA229C80B55001A2069 /* Resources */,
-				ECD55E5EABF38C2287E506C7 /* [CP] Embed Pods Frameworks */,
-				29FA88BC209BDB717D3C51C7 /* [CP] Copy Pods Resources */,
+				91EC0ACD98C5452B439428D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LoyaltySDKSample;
+			name = Example;
 			productName = LoyaltySDKSample;
-			productReference = 58CDDBA429C80B55001A2069 /* LoyaltySDKSample.app */;
+			productReference = 58CDDBA429C80B55001A2069 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		58CDDBB329C80B57001A2069 /* LoyaltySDKSampleTests */ = {
+		58CDDBB329C80B57001A2069 /* ExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58CDDBCB29C80B57001A2069 /* Build configuration list for PBXNativeTarget "LoyaltySDKSampleTests" */;
+			buildConfigurationList = 58CDDBCB29C80B57001A2069 /* Build configuration list for PBXNativeTarget "ExampleTests" */;
 			buildPhases = (
-				D143864A9D21FF3A73402111 /* [CP] Check Pods Manifest.lock */,
+				D47C4D983FBF76D765DBCA77 /* [CP] Check Pods Manifest.lock */,
 				58CDDBB029C80B57001A2069 /* Sources */,
 				58CDDBB129C80B57001A2069 /* Frameworks */,
 				58CDDBB229C80B57001A2069 /* Resources */,
-				94037FAB59D8B67E6C5794A2 /* [CP] Embed Pods Frameworks */,
+				9F598CEAF144DF0F42161C1B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				58CDDBB629C80B57001A2069 /* PBXTargetDependency */,
 			);
-			name = LoyaltySDKSampleTests;
+			name = ExampleTests;
 			productName = LoyaltySDKSampleTests;
-			productReference = 58CDDBB429C80B57001A2069 /* LoyaltySDKSampleTests.xctest */;
+			productReference = 58CDDBB429C80B57001A2069 /* ExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		58CDDBBD29C80B57001A2069 /* LoyaltySDKSampleUITests */ = {
+		58CDDBBD29C80B57001A2069 /* ExampleUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58CDDBCE29C80B57001A2069 /* Build configuration list for PBXNativeTarget "LoyaltySDKSampleUITests" */;
+			buildConfigurationList = 58CDDBCE29C80B57001A2069 /* Build configuration list for PBXNativeTarget "ExampleUITests" */;
 			buildPhases = (
-				2E9F9DD4B01F8AFA45520E93 /* [CP] Check Pods Manifest.lock */,
+				31F3C52F7762127AB1F3B8BA /* [CP] Check Pods Manifest.lock */,
 				58CDDBBA29C80B57001A2069 /* Sources */,
 				58CDDBBB29C80B57001A2069 /* Frameworks */,
 				58CDDBBC29C80B57001A2069 /* Resources */,
-				68F932C226899B17E279C257 /* [CP] Embed Pods Frameworks */,
-				23DEC86F9E0C16BA8555B425 /* [CP] Copy Pods Resources */,
+				EA2F622138CBCBF368630C81 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				58CDDBC029C80B57001A2069 /* PBXTargetDependency */,
 			);
-			name = LoyaltySDKSampleUITests;
+			name = ExampleUITests;
 			productName = LoyaltySDKSampleUITests;
-			productReference = 58CDDBBE29C80B57001A2069 /* LoyaltySDKSampleUITests.xctest */;
+			productReference = 58CDDBBE29C80B57001A2069 /* ExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +252,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 58CDDB9F29C80B55001A2069 /* Build configuration list for PBXProject "LoyaltySDKSample" */;
+			buildConfigurationList = 58CDDB9F29C80B55001A2069 /* Build configuration list for PBXProject "Example" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -268,9 +265,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58CDDBA329C80B55001A2069 /* LoyaltySDKSample */,
-				58CDDBB329C80B57001A2069 /* LoyaltySDKSampleTests */,
-				58CDDBBD29C80B57001A2069 /* LoyaltySDKSampleUITests */,
+				58CDDBA329C80B55001A2069 /* Example */,
+				58CDDBB329C80B57001A2069 /* ExampleTests */,
+				58CDDBBD29C80B57001A2069 /* ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -302,41 +299,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		23DEC86F9E0C16BA8555B425 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		29FA88BC209BDB717D3C51C7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample/Pods-LoyaltySDKSample-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample/Pods-LoyaltySDKSample-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample/Pods-LoyaltySDKSample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2E9F9DD4B01F8AFA45520E93 /* [CP] Check Pods Manifest.lock */ = {
+		31F3C52F7762127AB1F3B8BA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -358,24 +321,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		68F932C226899B17E279C257 /* [CP] Embed Pods Frameworks */ = {
+		91EC0ACD98C5452B439428D8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample/Pods-LoyaltySDKSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample/Pods-LoyaltySDKSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample/Pods-LoyaltySDKSample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		94037FAB59D8B67E6C5794A2 /* [CP] Embed Pods Frameworks */ = {
+		9F598CEAF144DF0F42161C1B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,7 +355,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSampleTests/Pods-LoyaltySDKSampleTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AA8BC331781AACBB20ED8C92 /* [CP] Check Pods Manifest.lock */ = {
+		B3FDCFD9F4DAF1058266B772 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -414,7 +377,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D143864A9D21FF3A73402111 /* [CP] Check Pods Manifest.lock */ = {
+		D47C4D983FBF76D765DBCA77 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -436,21 +399,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ECD55E5EABF38C2287E506C7 /* [CP] Embed Pods Frameworks */ = {
+		EA2F622138CBCBF368630C81 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample/Pods-LoyaltySDKSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample/Pods-LoyaltySDKSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample/Pods-LoyaltySDKSample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests/Pods-LoyaltySDKSample-LoyaltySDKSampleUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -461,7 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58CDDBAA29C80B55001A2069 /* ContentView.swift in Sources */,
-				58CDDBA829C80B55001A2069 /* LoyaltySDKSampleApp.swift in Sources */,
+				58CDDBA829C80B55001A2069 /* ExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,12 +450,12 @@
 /* Begin PBXTargetDependency section */
 		58CDDBB629C80B57001A2069 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 58CDDBA329C80B55001A2069 /* LoyaltySDKSample */;
+			target = 58CDDBA329C80B55001A2069 /* Example */;
 			targetProxy = 58CDDBB529C80B57001A2069 /* PBXContainerItemProxy */;
 		};
 		58CDDBC029C80B57001A2069 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 58CDDBA329C80B55001A2069 /* LoyaltySDKSample */;
+			target = 58CDDBA329C80B55001A2069 /* Example */;
 			targetProxy = 58CDDBBF29C80B57001A2069 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -548,7 +511,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -602,7 +565,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -614,21 +577,22 @@
 		};
 		58CDDBC929C80B57001A2069 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EEA25B02DA642D39D1C08E01 /* Pods-LoyaltySDKSample.debug.xcconfig */;
+			baseConfigurationReference = AF9945C7EEE6ED20EDB2FF60 /* Pods-LoyaltySDKSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LoyaltySDKSample/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Example/Preview Content\"";
 				DEVELOPMENT_TEAM = 4TWS7E2EPE;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -644,21 +608,22 @@
 		};
 		58CDDBCA29C80B57001A2069 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D8C47855976F5821E4B2959E /* Pods-LoyaltySDKSample.release.xcconfig */;
+			baseConfigurationReference = 3F57756238A276D606CAE06F /* Pods-LoyaltySDKSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LoyaltySDKSample/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Example/Preview Content\"";
 				DEVELOPMENT_TEAM = 4TWS7E2EPE;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -674,7 +639,7 @@
 		};
 		58CDDBCC29C80B57001A2069 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F25175F028316B14E2F4F980 /* Pods-LoyaltySDKSampleTests.debug.xcconfig */;
+			baseConfigurationReference = 893659DE3F794868DAFF1978 /* Pods-LoyaltySDKSampleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -682,20 +647,20 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4TWS7E2EPE;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.loyalty.sdk.sample.LoyaltySDKSampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoyaltySDKSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LoyaltySDKSample";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Example";
 			};
 			name = Debug;
 		};
 		58CDDBCD29C80B57001A2069 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1387DA43BB93E07DC168CD2 /* Pods-LoyaltySDKSampleTests.release.xcconfig */;
+			baseConfigurationReference = 96A8E6798232A88EC5FAF671 /* Pods-LoyaltySDKSampleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -703,20 +668,20 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4TWS7E2EPE;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = co.nimblehq.loyalty.sdk.sample.LoyaltySDKSampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoyaltySDKSample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LoyaltySDKSample";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Example";
 			};
 			name = Release;
 		};
 		58CDDBCF29C80B57001A2069 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F1870A7494E64727351D04E /* Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.debug.xcconfig */;
+			baseConfigurationReference = 27543CD7DBB5CC884C20D19C /* Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -735,7 +700,7 @@
 		};
 		58CDDBD029C80B57001A2069 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11B0A3BBF85CFF95A8786CC6 /* Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.release.xcconfig */;
+			baseConfigurationReference = EA793E8424D8A61917730635 /* Pods-LoyaltySDKSample-LoyaltySDKSampleUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -755,7 +720,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58CDDB9F29C80B55001A2069 /* Build configuration list for PBXProject "LoyaltySDKSample" */ = {
+		58CDDB9F29C80B55001A2069 /* Build configuration list for PBXProject "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58CDDBC629C80B57001A2069 /* Debug */,
@@ -764,7 +729,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58CDDBC829C80B57001A2069 /* Build configuration list for PBXNativeTarget "LoyaltySDKSample" */ = {
+		58CDDBC829C80B57001A2069 /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58CDDBC929C80B57001A2069 /* Debug */,
@@ -773,7 +738,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58CDDBCB29C80B57001A2069 /* Build configuration list for PBXNativeTarget "LoyaltySDKSampleTests" */ = {
+		58CDDBCB29C80B57001A2069 /* Build configuration list for PBXNativeTarget "ExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58CDDBCC29C80B57001A2069 /* Debug */,
@@ -782,7 +747,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58CDDBCE29C80B57001A2069 /* Build configuration list for PBXNativeTarget "LoyaltySDKSampleUITests" */ = {
+		58CDDBCE29C80B57001A2069 /* Build configuration list for PBXNativeTarget "ExampleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58CDDBCF29C80B57001A2069 /* Debug */,

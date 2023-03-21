@@ -7,9 +7,9 @@
 
 import Foundation
 
-public final class NimbleLoyaltySDK {
+public final class NimbleLoyalty {
 
-    public static let shared = NimbleLoyaltySDK()
+    public static let shared = NimbleLoyalty()
 
     private(set) var clientId: String = ""
 

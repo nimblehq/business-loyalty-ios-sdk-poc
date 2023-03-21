@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:LoyaltySDK.xcodeproj">
+      location = "group:/Users/ducbui/Documents/NimbleProjects/business-loyalty-ios-sdk-poc/Example/Example.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

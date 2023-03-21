@@ -5,14 +5,14 @@ PODS:
   - IQKeyboardManagerSwift (6.5.11)
   - KeychainAccess (4.2.2)
   - Kingfisher (7.6.2)
-  - LoyaltySDK (0.0.1):
-    - KeychainAccess (= 4.2.2)
-    - Moya/Combine (= 15.0.0)
   - Moya/Combine (15.0.0):
     - Moya/Core
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - Nimble (11.2.1)
+  - NimbleLoyalty (0.0.1):
+    - KeychainAccess
+    - Moya/Combine
   - Quick (6.1.0)
   - R.swift (7.3.0)
   - Sourcery (1.8.0):
@@ -27,9 +27,9 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - KeychainAccess
   - Kingfisher
-  - LoyaltySDK (from `../SDK`)
   - Moya/Combine
   - Nimble
+  - NimbleLoyalty (from `../`)
   - Quick
   - R.swift
   - Sourcery (= 1.8.0)
@@ -53,8 +53,8 @@ SPEC REPOS:
     - SwiftLint
 
 EXTERNAL SOURCES:
-  LoyaltySDK:
-    :path: "../SDK"
+  NimbleLoyalty:
+    :path: "../"
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
@@ -63,15 +63,15 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
-  LoyaltySDK: f109dd2c64954b0b621a13c6e2797fc6208610de
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   Nimble: 516ac503a0fafaa8e41dbb4a70a61be421fa893a
+  NimbleLoyalty: 313119ce6f8cdb95e5e3cea9f854e7dc8e9c6f42
   Quick: 6676ffb409bf04abba2ff23902af2407bfc6ac90
   R.swift: cef1c530541cb49412752721797f10dae6b32d11
   Sourcery: 6f5fe49b82b7e02e8c65560cbd52e1be67a1af2e
   SwiftFormat: 8904869cd98b67b351c3ab5dea605d00db320e14
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
 
-PODFILE CHECKSUM: 7995ac15ae1678dff6f50aa1c234ef9fe4710806
+PODFILE CHECKSUM: 8ae67579663c0b5037e0a3eb2370974a22b917c2
 
 COCOAPODS: 1.11.3

@@ -1,15 +1,15 @@
 //
-//  LoyaltySDKSampleApp.swift
-//  LoyaltySDKSample
+//  ExampleApp.swift
+//  Example
 //
 //  Created by David Bui on 20/03/2023.
 //
 
 import SwiftUI
-import LoyaltySDK
+import NimbleLoyalty
 
 @main
-struct LoyaltySDKSampleApp: App {
+struct ExampleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

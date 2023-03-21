@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  LoyaltySDKSample
+//  Example
 //
 //  Created by David Bui on 20/03/2023.
 //
