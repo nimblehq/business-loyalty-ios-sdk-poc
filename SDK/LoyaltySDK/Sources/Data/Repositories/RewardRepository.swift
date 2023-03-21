@@ -15,21 +15,15 @@ final class RewardRepository: RewardRepositoryProtocol {
         self.networkAPI = networkAPI
     }
 
-    func getRewardList() -> Observable<[Reward]> {
-        networkAPI.performRequest(.rewards, for: [APIReward].self)
-            .map { $0 as [Reward] }
-            .asObservable()
+    func getRewardList(_ completion: @escaping RequestCompletion<APIRewardList>) {
+        networkAPI.performRequest(.rewards, completion: completion)
     }
 
-    func getRedeemedRewardHistory() -> Observable<[Reward]> {
-        networkAPI.performRequest(.redeemHistory, for: [APIReward].self)
-            .map { $0 as [Reward] }
-            .asObservable()
+    func getRedeemedRewardHistory(_ completion: @escaping RequestCompletion<APIRedeemedRewardList>) {
+        networkAPI.performRequest(.redeemHistory, completion: completion)
     }
 
-    func redeemReward(code: String) -> Observable<Reward> {
-        networkAPI.performRequest(.redeemRewards(code: code), for: APIReward.self)
-            .map { $0 as Reward }
-            .asObservable()
+    func redeemReward(code: String, _ completion: @escaping RequestCompletion<APIReward>) {
+        networkAPI.performRequest(.redeemRewards(code: code), completion: completion)
     }
 }

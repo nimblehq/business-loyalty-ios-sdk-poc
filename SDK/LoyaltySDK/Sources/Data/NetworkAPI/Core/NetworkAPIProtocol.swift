@@ -10,5 +10,5 @@ import Moya
 
 protocol NetworkAPIProtocol {
 
-    func performRequest<T: Decodable>(_ configuration: RequestConfiguration, for type: T.Type) -> Observable<T>
+    func performRequest<T: Decodable>(_ configuration: RequestConfiguration, completion: @escaping RequestCompletion<T>)
 }

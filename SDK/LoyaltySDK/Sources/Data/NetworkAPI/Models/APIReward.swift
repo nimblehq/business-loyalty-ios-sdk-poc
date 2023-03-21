@@ -25,17 +25,4 @@ public struct APIReward: Decodable, Reward {
     var deletedAt: String?
     var redeemedRewardsCount: Int?
     var imageUrls: [String]?
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case organizationId = "organization_id"
-        case name, description, conditions, instructions, terms, type, state
-        case expiresOn = "expires_on"
-        case pointCost = "point_cost"
-        case deletedAt = "deleted_at"
-        case createdAt = "created_at"
-        case updatedAt = "updated_at"
-        case redeemedRewardsCount = "redeemed_rewards_count"
-        case imageUrls = "image_urls"
-    }
 }

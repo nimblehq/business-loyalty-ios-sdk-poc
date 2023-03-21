@@ -20,12 +20,26 @@ final class NetworkAPI: NetworkAPIProtocol {
 
     func performRequest<T>(
         _ configuration: RequestConfiguration,
-        for type: T.Type
-    ) -> Observable<T> where T: Decodable {
-        provider.requestPublisher(configuration)
-            .map { $0.data }
-            .decode(type: T.self, decoder: decoder)
-            .asObservable()
+        completion: @escaping RequestCompletion<T>
+    ) where T : Decodable {
+        provider.request(configuration) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case let .success(response):
+                do {
+                    let data = try response.map(T.self, using: self.decoder)
+                    completion(.success(data))
+                } catch {
+                    if let data = try? response.map(APIError.self, using: self.decoder) {
+                        completion(.failure(data))
+                    } else {
+                        completion(.failure(APIError(error: error.localizedDescription)))
+                    }
+                }
+            case let .failure(error):
+                completion(.failure(APIError(error: error.localizedDescription)))
+            }
+        }
     }
 }
 

@@ -12,6 +12,9 @@
 		5806F1A029C40C00002D0390 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F19B29C40C00002D0390 /* Keychain.swift */; };
 		5806F1A429C44847002D0390 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F1A329C44847002D0390 /* Constants.swift */; };
 		5806F1A629C4486E002D0390 /* Constants+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806F1A529C4486E002D0390 /* Constants+API.swift */; };
+		58A6DF1529C958B200E93ADE /* APIRewardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6DF1429C958B200E93ADE /* APIRewardList.swift */; };
+		58A6DF1729C9592600E93ADE /* APIRedeemedRewardList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6DF1629C9592600E93ADE /* APIRedeemedRewardList.swift */; };
+		58A6DF1929C9598600E93ADE /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A6DF1829C9598600E93ADE /* APIError.swift */; };
 		58A89C5F29C2EEC20040CD7C /* LoyaltySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 58A89C5E29C2EEC20040CD7C /* LoyaltySDK.docc */; };
 		58A89C6529C2EEC20040CD7C /* LoyaltySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58A89C5A29C2EEC20040CD7C /* LoyaltySDK.framework */; };
 		58A89C6A29C2EEC20040CD7C /* LoyaltySDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A89C6929C2EEC20040CD7C /* LoyaltySDKTests.swift */; };
@@ -22,8 +25,6 @@
 		58CDDBDA29C834D4001A2069 /* AuthPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBD929C834D4001A2069 /* AuthPlugin.swift */; };
 		58CDDBDF29C835C4001A2069 /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBDE29C835C4001A2069 /* NetworkAPI.swift */; };
 		58CDDBE129C836EB001A2069 /* NetworkAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBE029C836EB001A2069 /* NetworkAPIProtocol.swift */; };
-		58CDDBE429C83812001A2069 /* Publisher+Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBE329C83812001A2069 /* Publisher+Observable.swift */; };
-		58CDDBE629C83824001A2069 /* Publisher+Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBE529C83824001A2069 /* Publisher+Driver.swift */; };
 		58CDDBE929C83BE6001A2069 /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBE829C83BE6001A2069 /* Reward.swift */; };
 		58CDDBEB29C83C97001A2069 /* APIReward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBEA29C83C97001A2069 /* APIReward.swift */; };
 		58CDDBEF29C83E41001A2069 /* RewardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBEE29C83E41001A2069 /* RewardState.swift */; };
@@ -50,6 +51,9 @@
 		5806F19B29C40C00002D0390 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		5806F1A329C44847002D0390 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5806F1A529C4486E002D0390 /* Constants+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+API.swift"; sourceTree = "<group>"; };
+		58A6DF1429C958B200E93ADE /* APIRewardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRewardList.swift; sourceTree = "<group>"; };
+		58A6DF1629C9592600E93ADE /* APIRedeemedRewardList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRedeemedRewardList.swift; sourceTree = "<group>"; };
+		58A6DF1829C9598600E93ADE /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		58A89C5A29C2EEC20040CD7C /* LoyaltySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoyaltySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58A89C5D29C2EEC20040CD7C /* LoyaltySDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoyaltySDK.h; sourceTree = "<group>"; };
 		58A89C5E29C2EEC20040CD7C /* LoyaltySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = LoyaltySDK.docc; sourceTree = "<group>"; };
@@ -61,8 +65,6 @@
 		58CDDBD929C834D4001A2069 /* AuthPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPlugin.swift; sourceTree = "<group>"; };
 		58CDDBDE29C835C4001A2069 /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
 		58CDDBE029C836EB001A2069 /* NetworkAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProtocol.swift; sourceTree = "<group>"; };
-		58CDDBE329C83812001A2069 /* Publisher+Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Observable.swift"; sourceTree = "<group>"; };
-		58CDDBE529C83824001A2069 /* Publisher+Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+Driver.swift"; sourceTree = "<group>"; };
 		58CDDBE829C83BE6001A2069 /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		58CDDBEA29C83C97001A2069 /* APIReward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIReward.swift; sourceTree = "<group>"; };
 		58CDDBEE29C83E41001A2069 /* RewardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardState.swift; sourceTree = "<group>"; };
@@ -157,7 +159,6 @@
 		5806F19529C40AEC002D0390 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				58CDDBE229C83806001A2069 /* Combine */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -255,18 +256,12 @@
 		58CDDBDB29C83510001A2069 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				58A6DF1829C9598600E93ADE /* APIError.swift */,
+				58A6DF1629C9592600E93ADE /* APIRedeemedRewardList.swift */,
 				58CDDBEA29C83C97001A2069 /* APIReward.swift */,
+				58A6DF1429C958B200E93ADE /* APIRewardList.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		58CDDBE229C83806001A2069 /* Combine */ = {
-			isa = PBXGroup;
-			children = (
-				58CDDBE329C83812001A2069 /* Publisher+Observable.swift */,
-				58CDDBE529C83824001A2069 /* Publisher+Driver.swift */,
-			);
-			path = Combine;
 			sourceTree = "<group>";
 		};
 		58CDDBE729C83BDC001A2069 /* Entities */ = {
@@ -494,8 +489,9 @@
 				58A89C5F29C2EEC20040CD7C /* LoyaltySDK.docc in Sources */,
 				5806F1A029C40C00002D0390 /* Keychain.swift in Sources */,
 				58CDDBEF29C83E41001A2069 /* RewardState.swift in Sources */,
-				58CDDBE629C83824001A2069 /* Publisher+Driver.swift in Sources */,
+				58A6DF1729C9592600E93ADE /* APIRedeemedRewardList.swift in Sources */,
 				58CDDBEB29C83C97001A2069 /* APIReward.swift in Sources */,
+				58A6DF1529C958B200E93ADE /* APIRewardList.swift in Sources */,
 				58CDDBDA29C834D4001A2069 /* AuthPlugin.swift in Sources */,
 				58CDDBE929C83BE6001A2069 /* Reward.swift in Sources */,
 				5806F1A629C4486E002D0390 /* Constants+API.swift in Sources */,
@@ -503,13 +499,13 @@
 				5806F1A429C44847002D0390 /* Constants.swift in Sources */,
 				58DDF0A729C85DAE00DA28CD /* RewardRepository.swift in Sources */,
 				58CDDBDF29C835C4001A2069 /* NetworkAPI.swift in Sources */,
-				58CDDBE429C83812001A2069 /* Publisher+Observable.swift in Sources */,
 				58CDDBF129C83E55001A2069 /* RewardType.swift in Sources */,
 				58CDDBD729C83491001A2069 /* Typealiases.swift in Sources */,
 				58A89C7629C2EF610040CD7C /* NimbleLoyaltySDK.swift in Sources */,
 				58CDDBD529C83359001A2069 /* RequestConfiguration.swift in Sources */,
 				58DDF0A429C85D3600DA28CD /* RewardRepositoryProtocol.swift in Sources */,
 				5806F19F29C40C00002D0390 /* KeychainKey.swift in Sources */,
+				58A6DF1929C9598600E93ADE /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

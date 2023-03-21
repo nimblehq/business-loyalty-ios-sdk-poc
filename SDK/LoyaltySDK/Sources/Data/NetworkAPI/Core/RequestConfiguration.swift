@@ -21,7 +21,7 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
         return .bearer
     }
 
-    var baseURL: URL { URL(string: Constants.API.baseURL)! }
+    var baseURL: URL { URL(string: Constants.API.baseUrl)! }
 
     var path: String {
         switch self {

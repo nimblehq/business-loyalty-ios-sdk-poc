@@ -9,7 +9,4 @@ import Combine
 import UIKit
 
 typealias HTTPHeaders = [String: String]
-/// Publisher with error `AnyPublisher<T, Error>`
-public typealias Observable<T> = AnyPublisher<T, Error>
-/// Publisher with no error `AnyPublisher<T, Never>`
-public typealias Driver<T> = AnyPublisher<T, Never>
+public typealias RequestCompletion<T> = (Result<T, APIError>) -> Void

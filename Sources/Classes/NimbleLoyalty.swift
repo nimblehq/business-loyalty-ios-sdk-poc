@@ -11,7 +11,8 @@ public final class NimbleLoyalty {
 
     public static let shared = NimbleLoyalty()
 
-    private(set) var clientId: String = ""
+    private let keyChain = Keychain.default
+    private let rewardRepository = RewardRepository()
 
     private init() {}
 
@@ -19,6 +20,13 @@ public final class NimbleLoyalty {
         guard !clientId.isEmpty else {
             fatalError("Client Id must not be empty")
         }
-        self.clientId = clientId
+        try? keyChain.set(clientId, for: .clientId)
+    }
+
+    public func setClientSecret(_ clientSecret: String) {
+        guard !clientSecret.isEmpty else {
+            fatalError("Client Secret must not be empty")
+        }
+        try? keyChain.set(clientSecret, for: .clientSecret)
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 protocol RewardRepositoryProtocol: AnyObject {
 
-    func getRewardList() -> Observable<[Reward]>
-    func getRedeemedRewardHistory() -> Observable<[Reward]>
-    func redeemReward(code: String) -> Observable<Reward>
+    func getRewardList(_ completion: @escaping RequestCompletion<APIRewardList>)
+    func getRedeemedRewardHistory(_ completion: @escaping RequestCompletion<APIRedeemedRewardList>)
+    func redeemReward(code: String, _ completion: @escaping RequestCompletion<APIReward>)
 }
