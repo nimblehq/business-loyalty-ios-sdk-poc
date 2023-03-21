@@ -5,8 +5,6 @@
 //  Created by David Bui on 20/03/2023.
 //
 
-import Combine
-
 final class RewardRepository: RewardRepositoryProtocol {
 
     private var networkAPI: NetworkAPIProtocol

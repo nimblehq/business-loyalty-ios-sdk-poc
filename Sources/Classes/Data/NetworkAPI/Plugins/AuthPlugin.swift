@@ -13,8 +13,9 @@ struct AuthPlugin: PluginType {
 
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
         var request = request
-        if let token: String = try? keychain.get(.userToken), !token.isEmpty {
-            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        if let token: KeychainToken = try? keychain.get(.userToken),
+           let accessToken = token.accessToken, !accessToken.isEmpty {
+            request.addValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
         }
         return request
     }

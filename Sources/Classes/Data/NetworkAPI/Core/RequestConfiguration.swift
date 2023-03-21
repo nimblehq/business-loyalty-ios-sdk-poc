@@ -10,6 +10,7 @@ import Moya
 
 enum RequestConfiguration: Equatable {
 
+    case getToken(token: String)
     case rewards
     case redeemRewards(code: String)
     case redeemHistory
@@ -25,6 +26,8 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
 
     var path: String {
         switch self {
+        case .getToken:
+            return "oauth/token"
         case .rewards:
             return "rewards.json"
         case let .redeemRewards(id):
@@ -36,6 +39,8 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
 
     var method: Moya.Method {
         switch self {
+        case .getToken:
+            return .post
         case .redeemRewards:
             return .patch
         case .rewards, .redeemHistory:
