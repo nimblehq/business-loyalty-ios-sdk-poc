@@ -7,16 +7,16 @@
 
 import Foundation
 
-public final class NimbleLoyaltySDK {
+public final class NimbleLoyalty {
 
-    public static let shared = NimbleLoyaltySDK()
+    public static let shared = NimbleLoyalty()
 
     private(set) var clientId: String = ""
 
     private init() {}
 
     public func setClientId(_ clientId: String) {
-        guard clientId.isEmpty else {
+        guard !clientId.isEmpty else {
             fatalError("Client Id must not be empty")
         }
         self.clientId = clientId

@@ -1,14 +1,14 @@
 //
-//  LoyaltySDKTests.swift
-//  LoyaltySDKTests
+//  LoyaltySDKSampleTests.swift
+//  LoyaltySDKSampleTests
 //
-//  Created by David Bui on 16/03/2023.
+//  Created by David Bui on 20/03/2023.
 //
 
 import XCTest
-@testable import LoyaltySDK
+@testable import LoyaltySDKSample
 
-final class LoyaltySDKTests: XCTestCase {
+final class LoyaltySDKSampleTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

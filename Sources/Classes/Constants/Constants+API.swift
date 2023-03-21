@@ -9,5 +9,5 @@ import Foundation
 
 extension Constants.API {
 
-    static let baseURL: String = "http://cx-demo.nimblehq.co/api/"
+    static let baseUrl: String = "http://cx-demo.nimblehq.co/api/"
 }
