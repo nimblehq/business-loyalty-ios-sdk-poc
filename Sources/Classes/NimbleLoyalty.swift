@@ -12,7 +12,6 @@ public final class NimbleLoyalty {
     public static let shared = NimbleLoyalty()
 
     private let keyChain = Keychain.default
-    private let rewardRepository = RewardRepository()
 
     private init() {}
 
