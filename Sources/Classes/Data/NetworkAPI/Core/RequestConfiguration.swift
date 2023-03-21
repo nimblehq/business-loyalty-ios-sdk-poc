@@ -10,7 +10,7 @@ import Moya
 
 enum RequestConfiguration: Equatable {
 
-    case getToken(token: String)
+    case getToken(code: String, clientId: String, clientSecret: String)
     case rewards
     case redeemRewards(code: String)
     case redeemHistory
@@ -49,7 +49,22 @@ extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
     }
 
     var task: Moya.Task {
-        return .requestPlain
+        switch self {
+        case let .getToken(code, clientId, clientSecret):
+            return .requestParameters(
+                parameters: [
+                    "client_id": clientId,
+                    "client_secret": clientSecret,
+                    "code": code,
+                    "code_verifier": "",
+                    "grant_type": "authorization_code",
+                    "redirect_uri": Constants.API.redirectUri
+                ],
+                encoding: URLEncoding.default
+            )
+        default:
+            return .requestPlain
+        }
     }
 
     var headers: HTTPHeaders? {

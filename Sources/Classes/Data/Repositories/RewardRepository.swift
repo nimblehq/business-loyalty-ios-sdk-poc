@@ -21,7 +21,7 @@ final class RewardRepository: RewardRepositoryProtocol {
         networkAPI.performRequest(.redeemHistory, completion: completion)
     }
 
-    func redeemReward(code: String, _ completion: @escaping RequestCompletion<APIReward>) {
+    func redeemReward(code: String, _ completion: @escaping RequestCompletion<APIRedeemReward>) {
         networkAPI.performRequest(.redeemRewards(code: code), completion: completion)
     }
 }

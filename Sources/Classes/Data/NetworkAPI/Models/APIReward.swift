@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct APIReward: Decodable, Reward {
+public struct APIReward: Decodable {
 
     var id: String?
     var organizationId: String?
@@ -16,8 +16,8 @@ public struct APIReward: Decodable, Reward {
     var conditions: String?
     var instructions: String?
     var terms: String?
-    var type: RewardType?
-    var state: RewardState?
+    var type: String?
+    var state: String?
     var expiresOn: String?
     var pointCost: Int?
     var createdAt: String?

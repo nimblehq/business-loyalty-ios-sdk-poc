@@ -9,5 +9,5 @@ import Foundation
 
 protocol AuthenticationRepositoryProtocol: AnyObject {
 
-    func getToken(authToken: String, _ completion: @escaping RequestCompletion<APIToken>)
+    func getToken(code: String, _ completion: @escaping RequestCompletion<APIToken>)
 }

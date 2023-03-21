@@ -11,5 +11,5 @@ protocol RewardRepositoryProtocol: AnyObject {
 
     func getRewardList(_ completion: @escaping RequestCompletion<APIRewardList>)
     func getRedeemedRewardHistory(_ completion: @escaping RequestCompletion<APIRedeemedRewardList>)
-    func redeemReward(code: String, _ completion: @escaping RequestCompletion<APIReward>)
+    func redeemReward(code: String, _ completion: @escaping RequestCompletion<APIRedeemReward>)
 }
