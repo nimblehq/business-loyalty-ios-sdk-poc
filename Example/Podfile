@@ -9,7 +9,7 @@ def testing_pods
   pod 'SwiftFormat/CLI'
 end
 
-target 'LoyaltySDKSample' do
+target 'Example' do
   # UI
   pod 'Kingfisher'
   pod 'FlowStacks'
@@ -31,12 +31,12 @@ target 'LoyaltySDKSample' do
   # LoyaltySDK
   pod ‘NimbleLoyalty’, :path => ‘../’
 
-  target 'LoyaltySDKSampleTests' do
+  target 'ExampleTests' do
     inherit! :search_paths
     testing_pods
   end
 
-  target 'LoyaltySDKSampleUITests' do
+  target 'ExampleUITests' do
     testing_pods
   end
 end
