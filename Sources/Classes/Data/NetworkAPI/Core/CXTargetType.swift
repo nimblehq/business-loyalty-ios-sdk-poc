@@ -58,7 +58,7 @@ extension CXTargetType: TargetType, AccessTokenAuthorizable {
                     "code": code,
                     "code_verifier": "",
                     "grant_type": "authorization_code",
-                    "redirect_uri": Constants.API.redirectUri
+                    "redirect_uri": Constants.API.redirectURI
                 ],
                 encoding: URLEncoding.default
             )

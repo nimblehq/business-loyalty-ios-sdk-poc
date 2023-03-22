@@ -92,7 +92,7 @@ extension NimbleLoyalty {
             return
         }
 
-        guard let callbackURLScheme = URL(string: Constants.API.redirectUri)?.scheme else {
+        guard let callbackURLScheme = URL(string: Constants.API.redirectURI)?.scheme else {
             completion(.failure(NimbleLoyaltyError.failToCreateCallbackURL))
             return
         }
