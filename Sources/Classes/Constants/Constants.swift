@@ -8,4 +8,6 @@
 enum Constants {
 
     enum API {}
+
+    enum WrongEnum {}
 }
