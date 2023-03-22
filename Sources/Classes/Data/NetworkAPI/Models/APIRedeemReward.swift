@@ -17,6 +17,6 @@ public struct APIRedeemReward: Decodable {
     public var pointCost: Int?
     public var createdAt: String?
     public var updatedAt: String?
-    public var imageUrls: [String]?
+    public var images: String?
     public var reward: APIReward?
 }

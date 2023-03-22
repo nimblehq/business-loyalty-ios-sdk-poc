@@ -63,19 +63,19 @@ struct RewardHistoryItemView: View {
         return formatter
     }()
 
-    let reward: APIReward
+    let reward: APIRedeemReward
 
     var body: some View {
         HStack(spacing: 10.0) {
-            KFImage(URL(string: reward.imageUrls?.first ?? ""))
+            KFImage(URL(string: reward.images ?? ""))
                 .onFailureImage(UIImage(named: "logo_square"))
                 .resizable()
                 .frame(width: 60, height: 60)
                 .cornerRadius(10)
             VStack(alignment: .leading, spacing: 5) {
-                Text(reward.name ?? "")
+                Text(reward.reward?.name ?? "")
                     .font(.headline)
-                Text(reward.description ?? "")
+                Text(reward.reward?.description ?? "")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                     .lineLimit(2)
@@ -86,7 +86,7 @@ struct RewardHistoryItemView: View {
                         .font(.caption)
                     Text("|")
                         .font(.caption)
-                    Text("Expires: \(formatDate(reward.expiresOn ?? ""))")
+                    Text("Expires: \(formatDate(reward.reward?.expiresOn ?? ""))")
                         .font(.caption)
                 }
                 Text(reward.state ?? "")
