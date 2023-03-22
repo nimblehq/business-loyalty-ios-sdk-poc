@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.6.4)
+  - ExampleKeys (1.0.0):
+    - ExampleKeysInterfaces (~> 1.0.0)
+  - ExampleKeysInterfaces (1.0.0)
   - Factory (2.0.3)
   - FlowStacks (0.2.5)
   - IQKeyboardManagerSwift (6.5.11)
@@ -22,6 +25,8 @@ PODS:
   - SwiftLint (0.50.3)
 
 DEPENDENCIES:
+  - ExampleKeys (from `./dependencies/ExampleKeys`)
+  - ExampleKeysInterfaces (from `./dependencies/ExampleKeysInterfaces`)
   - Factory
   - FlowStacks
   - IQKeyboardManagerSwift
@@ -53,11 +58,17 @@ SPEC REPOS:
     - SwiftLint
 
 EXTERNAL SOURCES:
+  ExampleKeys:
+    :path: "./dependencies/ExampleKeys"
+  ExampleKeysInterfaces:
+    :path: "./dependencies/ExampleKeysInterfaces"
   NimbleLoyalty:
     :path: "../"
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  ExampleKeys: 386465fa2ff602fb23ecff54fa56839213b818a8
+  ExampleKeysInterfaces: 75513935db2603ea571560889c72bb804e1d656b
   Factory: da19d823ec2a11190601683141edd26d8dea186a
   FlowStacks: a8f2c03581f41c4206c8444843a659c8a1897604
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
@@ -72,6 +83,6 @@ SPEC CHECKSUMS:
   SwiftFormat: 8904869cd98b67b351c3ab5dea605d00db320e14
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
 
-PODFILE CHECKSUM: ddd3ebcfa5f7a56b7769aa59f3603678231b835e
+PODFILE CHECKSUM: 7e3c111c7653dd82b8953b476d467005abd64098
 
 COCOAPODS: 1.11.3
