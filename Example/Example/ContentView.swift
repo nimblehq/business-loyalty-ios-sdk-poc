@@ -40,6 +40,11 @@ struct ContentView: View {
     private func setUpView(isAuthenticated: Bool = false) -> some View {
         VStack {
             Spacer()
+            Image("logo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 200, height: 56)
+            Spacer(minLength: 20.0)
             if isAuthenticated {
                 Button(action: {
                     showRewardListView.toggle()
@@ -57,7 +62,7 @@ struct ContentView: View {
                 Button(action: {
                     // Handle button tap-action
                 }) {
-                    Text("Redeemed Reward History")
+                    Text("Reward History")
                         .font(.title)
                         .fontWeight(.semibold)
                         .foregroundColor(.white)
@@ -67,6 +72,20 @@ struct ContentView: View {
                         .cornerRadius(10)
                         .padding(.horizontal)
                 }
+                Button(action: {
+                    viewModel.signOut()
+                }) {
+                    Text("Clear Session")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                }
+                .padding(.top, 20.0)
             } else {
                 Button(action: {
                     viewModel.signIn()

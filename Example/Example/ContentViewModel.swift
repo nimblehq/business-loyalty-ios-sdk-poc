@@ -13,7 +13,7 @@ final class ContentViewModel: ObservableObject {
     @Published var state: State = .idle
 
     init() {
-        NimbleLoyalty.shared.setClientId("MRC6bwFASOm0sJYPYwVEt2KD51bkAtdgS7ltqeDYUf4")
+        NimbleLoyalty.shared.setClientId(Constants.clientId)
         state = NimbleLoyalty.shared.isAuthenticated() ? .authenticated : .unauthenticated
     }
 
@@ -29,6 +29,11 @@ final class ContentViewModel: ObservableObject {
                 }
             }
         }
+    }
+
+    func signOut() {
+        NimbleLoyalty.shared.clearSession()
+        state = .unauthenticated
     }
 }
 
