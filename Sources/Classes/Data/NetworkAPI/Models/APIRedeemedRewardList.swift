@@ -9,5 +9,5 @@ import Foundation
 
 public struct APIRedeemedRewardList: Decodable {
 
-    var redeemedRewards: [APIReward]?
+    public var redeemedRewards: [APIReward]?
 }

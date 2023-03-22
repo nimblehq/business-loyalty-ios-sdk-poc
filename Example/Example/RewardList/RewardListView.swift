@@ -22,6 +22,20 @@ struct RewardListView: View {
                 }
         case .loaded:
             setUpView()
+        case .redeemed:
+            setUpView()
+                .alert(isPresented: .constant(true)) {
+                    Alert(
+                        title: Text("Example"),
+                        message: Text("Redeem reward successfully"),
+                        dismissButton: Alert.Button.default(
+                            Text("OK"),
+                            action: {
+                                viewModel.state = .loaded
+                            }
+                        )
+                    )
+                }
         case let .error(message):
             setUpView()
                 .alert(isPresented: .constant(true)) {
@@ -43,8 +57,13 @@ struct RewardListView: View {
             ScrollView {
                 VStack(spacing: 16.0) {
                     ForEach(viewModel.rewards.indices, id: \.self) { index in
-                        RewardItemView(reward: viewModel.rewards[index])
-                            .tag(index)
+                        RewardItemView(
+                            reward: viewModel.rewards[index],
+                            action: { code in
+                                viewModel.redeemReward(code: code)
+                            }
+                        )
+                        .tag(index)
                     }
                 }
             }
@@ -55,6 +74,8 @@ struct RewardListView: View {
 struct RewardItemView: View {
 
     let reward: APIReward
+
+    var action: (String) -> Void
 
     var body: some View {
         VStack {
@@ -85,7 +106,7 @@ struct RewardItemView: View {
                         .foregroundColor(.green)
                 }
                 Button(action: {
-                    // Handle redeem reward action
+                    action(reward.id ?? "")
                 }) {
                     Text("Redeem")
                         .font(.headline)

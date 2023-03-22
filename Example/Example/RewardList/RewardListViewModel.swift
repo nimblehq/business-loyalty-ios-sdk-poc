@@ -26,13 +26,25 @@ final class RewardListViewModel: ObservableObject {
             }
         }
     }
+
+    func redeemReward(code: String) {
+        NimbleLoyalty.shared.redeemReward(code: code) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.state = .redeemed
+            case let .failure(error):
+                self.state = .error(error.localizedDescription)
+            }
+        }
+    }
 }
 
 extension RewardListViewModel {
 
     enum State: Equatable {
 
-        case idle, loaded
+        case idle, loaded, redeemed
         case error(String)
     }
 }
