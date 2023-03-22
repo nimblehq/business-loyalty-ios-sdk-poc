@@ -58,6 +58,7 @@ extension AuthenticationSessionManager {
                     case let .success(token):
                         let keyChainToken = KeychainToken(token)
                         try? self.keychain.set(keyChainToken, for: .userToken)
+                        completion(.success(()))
                     case .failure(let error):
                         completion(.failure(NimbleLoyaltyError.failToGetAccessToken(error.error)))
                     }
