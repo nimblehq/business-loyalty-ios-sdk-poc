@@ -11,5 +11,7 @@ extension Keychain {
     enum Key: String {
 
         case userToken
+        case clientSecret
+        case clientId
     }
 }
