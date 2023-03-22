@@ -14,12 +14,12 @@ final class RewardHistoryViewModel: ObservableObject {
     @Published var rewards: [APIReward] = []
 
     func loadRewardHistory() {
-        NimbleLoyalty.shared.getRewardList { [weak self] result in
+        NimbleLoyalty.shared.getRewardHistory { [weak self] result in
             guard let self = self else { return }
 
             switch result {
-            case let .success(rewardList):
-                self.rewards = rewardList.rewards ?? []
+            case let .success(rewardHistory):
+                self.rewards = rewardHistory.redeemedRewards ?? []
                 self.state = .loaded
             case let .failure(error):
                 self.state = .error(error.localizedDescription)
