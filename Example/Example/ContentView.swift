@@ -22,7 +22,14 @@ struct ContentView: View {
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 NimbleLoyalty.shared.setClientId("MRC6bwFASOm0sJYPYwVEt2KD51bkAtdgS7ltqeDYUf4")
-                NimbleLoyalty.shared.signIn()
+                NimbleLoyalty.shared.authenticate { result in
+                    switch result {
+                    case .success(let success):
+                        print(success)
+                    case .failure(let failure):
+                        print(failure.localizedDescription)
+                    }
+                }
             }
         }
     }
