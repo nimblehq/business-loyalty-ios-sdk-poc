@@ -13,6 +13,7 @@ struct ContentView: View {
 
     @StateObject private var viewModel = ContentViewModel()
     @State var showRewardListView = false
+    @State var showRewardHistoryView = false
 
     var body: some View {
         switch viewModel.state {
@@ -60,7 +61,7 @@ struct ContentView: View {
                         .padding(.horizontal)
                 }
                 Button(action: {
-                    // Handle button tap-action
+                    showRewardHistoryView.toggle()
                 }) {
                     Text("Reward History")
                         .font(.title)
@@ -106,6 +107,9 @@ struct ContentView: View {
         .padding()
         .sheet(isPresented: $showRewardListView) {
             RewardListView()
+        }
+        .sheet(isPresented: $showRewardHistoryView) {
+            RewardHistoryView()
         }
     }
 }

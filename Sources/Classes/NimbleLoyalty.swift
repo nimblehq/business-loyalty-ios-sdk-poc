@@ -119,6 +119,21 @@ extension NimbleLoyalty {
             }
         }
     }
+
+    public func getRewardHistory(_ completion: @escaping (Result<[APIRedeemReward], NimbleLoyaltyError>) -> Void) {
+        guard isAuthenticated() else {
+            completion(.failure(NimbleLoyaltyError.unauthenticated))
+            return
+        }
+        rewardRepository.getRedeemedRewardHistory() { result in
+            switch result {
+            case let .success(redeemRewardList):
+                completion(.success(redeemRewardList))
+            case let .failure(error):
+                completion(.failure(NimbleLoyaltyError.api(error.error)))
+            }
+        }
+    }
 }
 
 
