@@ -78,7 +78,7 @@ extension NimbleLoyalty {
         return true
     }
 
-    public func authenticate(_ completion: @escaping (Result<Void, Error>) -> Void) {
+    public func authenticate(_ completion: @escaping (Result<Void, NimbleLoyaltyError>) -> Void) {
         guard !isAuthenticated() else {
             completion(.failure(NimbleLoyaltyError.alreadyAuthenticated))
             return
