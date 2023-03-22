@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
   s.name                  = 'NimbleLoyalty'
-  s.version               = '0.0.1'
+  s.version               = '0.1.0'
   s.summary               = 'A SDK supports Loyalty programm'
   s.homepage              = 'https://github.com/nimblehq/business-loyalty-ios-sdk-poc'
   s.author                = { 'David' => 'duc@nimblehq.co' }
