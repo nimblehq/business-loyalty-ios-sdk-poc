@@ -12,6 +12,8 @@
 		5829A68529CAB225002C0834 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5829A68429CAB225002C0834 /* ContentViewModel.swift */; };
 		5829A68729CAB626002C0834 /* RewardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5829A68629CAB626002C0834 /* RewardListView.swift */; };
 		5829A68929CAB637002C0834 /* RewardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5829A68829CAB637002C0834 /* RewardListViewModel.swift */; };
+		5844475A29CAE478000DDC32 /* RewardHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844475929CAE478000DDC32 /* RewardHistoryView.swift */; };
+		5844475C29CAE483000DDC32 /* RewardHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844475B29CAE483000DDC32 /* RewardHistoryViewModel.swift */; };
 		585673D229CAC4FE00DE4432 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585673D129CAC4FE00DE4432 /* Constants.swift */; };
 		58CDDBA829C80B55001A2069 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBA729C80B55001A2069 /* ExampleApp.swift */; };
 		58CDDBAA29C80B55001A2069 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBA929C80B55001A2069 /* ContentView.swift */; };
@@ -48,6 +50,8 @@
 		5829A68429CAB225002C0834 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		5829A68629CAB626002C0834 /* RewardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListView.swift; sourceTree = "<group>"; };
 		5829A68829CAB637002C0834 /* RewardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardListViewModel.swift; sourceTree = "<group>"; };
+		5844475929CAE478000DDC32 /* RewardHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardHistoryView.swift; sourceTree = "<group>"; };
+		5844475B29CAE483000DDC32 /* RewardHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardHistoryViewModel.swift; sourceTree = "<group>"; };
 		585673D129CAC4FE00DE4432 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		58CDDBA429C80B55001A2069 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58CDDBA729C80B55001A2069 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
@@ -122,6 +126,15 @@
 			path = Content;
 			sourceTree = "<group>";
 		};
+		5844475829CAE469000DDC32 /* RewardHistory */ = {
+			isa = PBXGroup;
+			children = (
+				5844475929CAE478000DDC32 /* RewardHistoryView.swift */,
+				5844475B29CAE483000DDC32 /* RewardHistoryViewModel.swift */,
+			);
+			path = RewardHistory;
+			sourceTree = "<group>";
+		};
 		58CDDB9B29C80B55001A2069 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +163,7 @@
 				58CDDBA729C80B55001A2069 /* ExampleApp.swift */,
 				585673D129CAC4FE00DE4432 /* Constants.swift */,
 				5844475429CAE233000DDC32 /* Content */,
+				5844475829CAE469000DDC32 /* RewardHistory */,
 				5844475329CAE21E000DDC32 /* RewardList */,
 				58CDDBAB29C80B57001A2069 /* Assets.xcassets */,
 				58CDDBAD29C80B57001A2069 /* Preview Content */,
@@ -453,7 +467,9 @@
 			files = (
 				58CDDBAA29C80B55001A2069 /* ContentView.swift in Sources */,
 				58CDDBA829C80B55001A2069 /* ExampleApp.swift in Sources */,
+				5844475C29CAE483000DDC32 /* RewardHistoryViewModel.swift in Sources */,
 				585673D229CAC4FE00DE4432 /* Constants.swift in Sources */,
+				5844475A29CAE478000DDC32 /* RewardHistoryView.swift in Sources */,
 				5829A68929CAB637002C0834 /* RewardListViewModel.swift in Sources */,
 				5829A68529CAB225002C0834 /* ContentViewModel.swift in Sources */,
 				5829A68729CAB626002C0834 /* RewardListView.swift in Sources */,

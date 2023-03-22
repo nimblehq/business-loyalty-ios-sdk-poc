@@ -90,9 +90,9 @@ struct RewardItemView: View {
                 Text(reward.name ?? "")
                     .font(.headline)
                 Text(reward.description ?? "")
-                    .multilineTextAlignment(.leading)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+                    .lineLimit(2)
                 HStack {
                     Text("\(reward.pointCost ?? 0) Points")
                         .font(.caption)
