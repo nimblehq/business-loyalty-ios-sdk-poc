@@ -8,7 +8,6 @@
 import NimbleLoyalty
 import SwiftUI
 import UIKit
-import WebKit
 
 struct ContentView: View {
     var body: some View {
@@ -20,8 +19,8 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                NimbleLoyalty.shared.setClientId("MRC6bwFASOm0sJYPYwVEt2KD51bkAtdgS7ltqeDYUf4")
+            NimbleLoyalty.shared.setClientId(Constants.clientId)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {               
                 NimbleLoyalty.shared.authenticate { result in
                     switch result {
                     case .success(let success):

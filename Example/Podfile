@@ -27,6 +27,8 @@ target 'Example' do
 
   # Development
   pod 'SwiftLint'
+  pod "ExampleKeys", path: "./dependencies/ExampleKeys"
+  pod "ExampleKeysInterfaces", path: "./dependencies/ExampleKeysInterfaces"
 
   # LoyaltySDK
   pod ‘NimbleLoyalty’, :path => ‘../’
