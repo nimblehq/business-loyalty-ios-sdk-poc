@@ -9,14 +9,14 @@ import Foundation
 
 public struct APIRedeemReward: Decodable {
 
-    var id: String?
-    var organizationId: String?
-    var customerId: String?
-    var rewardId: String?
-    var state: String?
-    var pointCost: Int?
-    var createdAt: String?
-    var updatedAt: String?
-    var imageUrls: [String]?
-    var reward: APIReward?
+    public var id: String?
+    public var organizationId: String?
+    public var customerId: String?
+    public var rewardId: String?
+    public var state: String?
+    public var pointCost: Int?
+    public var createdAt: String?
+    public var updatedAt: String?
+    public var imageUrls: [String]?
+    public var reward: APIReward?
 }
