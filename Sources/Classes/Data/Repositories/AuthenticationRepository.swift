@@ -12,15 +12,18 @@ final class AuthenticationRepository: AuthenticationRepositoryProtocol {
 
     init(
         networkAPI: NetworkAPIProtocol = NetworkAPI(),
-         keychain: KeychainProtocol = Keychain.default
+        keychain: KeychainProtocol = Keychain.default
     ) {
         self.networkAPI = networkAPI
         self.keychain = keychain
     }
-
+    
     func getToken(code: String, _ completion: @escaping RequestCompletion<APIToken>) {
-        let clientId: String = try! keychain.get(.clientId) ?? ""
-        let clientSecret: String = try! keychain.get(.clientSecret) ?? ""
+        guard let clientId: String = try? keychain.get(.clientId),
+              let clientSecret: String = try? keychain.get(.clientSecret) else {
+            completion(.failure(.init(error: "Missing client id or client secret")))
+            return
+        }
         networkAPI.performRequest(
             .getToken(
                 code: code,

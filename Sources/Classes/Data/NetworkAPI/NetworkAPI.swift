@@ -10,7 +10,7 @@ import Moya
 final class NetworkAPI: NetworkAPIProtocol {
 
     private let keychain = Keychain.default
-    private let provider = MoyaProvider<RequestConfiguration>(plugins: [AuthPlugin()])
+    private let provider = MoyaProvider<CXTargetType>(plugins: [AuthPlugin()])
     private let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -18,7 +18,7 @@ final class NetworkAPI: NetworkAPIProtocol {
     }()
 
     func performRequest<T>(
-        _ configuration: RequestConfiguration,
+        _ configuration: CXTargetType,
         completion: @escaping RequestCompletion<T>
     ) where T : Decodable {
         provider.request(configuration) { [weak self] result in

@@ -1,5 +1,5 @@
 //
-//  RequestConfiguration.swift
+//  CXTargetType.swift
 //  LoyaltySDK
 //
 //  Created by David Bui on 20/03/2023.
@@ -8,7 +8,7 @@
 import Foundation
 import Moya
 
-enum RequestConfiguration: Equatable {
+enum CXTargetType: Equatable {
 
     case getToken(code: String, clientId: String, clientSecret: String)
     case rewards
@@ -16,7 +16,7 @@ enum RequestConfiguration: Equatable {
     case redeemHistory
 }
 
-extension RequestConfiguration: TargetType, AccessTokenAuthorizable {
+extension CXTargetType: TargetType, AccessTokenAuthorizable {
 
     var authorizationType: Moya.AuthorizationType? {
         return .bearer

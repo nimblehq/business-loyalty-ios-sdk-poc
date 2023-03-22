@@ -9,5 +9,5 @@ import Moya
 
 protocol NetworkAPIProtocol {
 
-    func performRequest<T: Decodable>(_ configuration: RequestConfiguration, completion: @escaping RequestCompletion<T>)
+    func performRequest<T: Decodable>(_ configuration: CXTargetType, completion: @escaping RequestCompletion<T>)
 }
