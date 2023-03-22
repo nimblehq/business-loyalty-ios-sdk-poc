@@ -9,20 +9,20 @@ import Foundation
 
 public struct APIReward: Decodable {
 
-    var id: String?
-    var organizationId: String?
-    var name: String?
-    var description: String?
-    var conditions: String?
-    var instructions: String?
-    var terms: String?
-    var type: String?
-    var state: String?
-    var expiresOn: String?
-    var pointCost: Int?
-    var createdAt: String?
-    var updatedAt: String?
-    var deletedAt: String?
-    var redeemedRewardsCount: Int?
-    var imageUrls: [String]?
+    public var id: String?
+    public var organizationId: String?
+    public var name: String?
+    public var description: String?
+    public var conditions: String?
+    public var instructions: String?
+    public var terms: String?
+    public var type: String?
+    public var state: String?
+    public var expiresOn: String?
+    public var pointCost: Int?
+    public var createdAt: String?
+    public var updatedAt: String?
+    public var deletedAt: String?
+    public var redeemedRewardsCount: Int?
+    public var imageUrls: [String]?
 }

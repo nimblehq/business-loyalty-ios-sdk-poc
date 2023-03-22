@@ -9,6 +9,7 @@ import AuthenticationServices
 
 public enum NimbleLoyaltyError: Error {
 
+    case api(String?)
     case alreadyAuthenticated
     case clientIdEmpty
     case clientSecretEmpty
@@ -17,14 +18,17 @@ public enum NimbleLoyaltyError: Error {
     case failToAuthenticate
     case failToGetAccessToken(String?)
     case failToStartASWebAuthenticationSession
+    case unauthenticated
 }
 
 extension NimbleLoyaltyError: LocalizedError {
 
     public var errorDescription: String? {
         switch self {
+        case let .api(error):
+            return error ?? "Unknown"
         case .alreadyAuthenticated:
-            return "Authenticated."
+            return "Already authenticated."
         case .clientIdEmpty:
             return "Client Id is empty"
         case .clientSecretEmpty:
@@ -39,6 +43,8 @@ extension NimbleLoyaltyError: LocalizedError {
             return "Failed to exchange access code for tokens: \(error ?? "Unknown")"
         case .failToStartASWebAuthenticationSession:
             return "Failed to start ASWebAuthenticationSession"
+        case .unauthenticated:
+            return "Unauthorized access. Please authenticate."
         }
     }
 }
@@ -49,6 +55,7 @@ public final class NimbleLoyalty {
 
     private let keychain = Keychain.default
     private let sessionManager = AuthenticationSessionManager()
+    private let rewardRepository = RewardRepository()
 
     private init() {}
 
@@ -81,6 +88,21 @@ extension NimbleLoyalty {
 
     public func clearSession() {
         sessionManager.clearSession()
+    }
+
+    public func getRewardList(_ completion: @escaping (Result<APIRewardList, NimbleLoyaltyError>) -> Void) {
+        guard isAuthenticated() else {
+            completion(.failure(NimbleLoyaltyError.unauthenticated))
+            return
+        }
+        rewardRepository.getRewardList { result in
+            switch result {
+            case let .success(rewardList):
+                completion(.success(rewardList))
+            case let .failure(error):
+                completion(.failure(NimbleLoyaltyError.api(error.error)))
+            }
+        }
     }
 }
 
