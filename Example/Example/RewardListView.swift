@@ -35,10 +35,18 @@ struct RewardListView: View {
     }
 
     private func setUpView() -> some View {
-        VStack(spacing: 16.0) {
-            ForEach(viewModel.rewards.indices, id: \.self) { index in
-                RewardItemView(reward: viewModel.rewards[index])
-                    .tag(index)
+        VStack {
+            Text("Rewards")
+                .font(.largeTitle)
+                .frame(height: 24.0)
+                .padding(.vertical, 20.0)
+            ScrollView {
+                VStack(spacing: 16.0) {
+                    ForEach(viewModel.rewards.indices, id: \.self) { index in
+                        RewardItemView(reward: viewModel.rewards[index])
+                            .tag(index)
+                    }
+                }
             }
         }
     }
@@ -49,33 +57,49 @@ struct RewardItemView: View {
     let reward: APIReward
 
     var body: some View {
-        HStack {
+        VStack {
             KFImage(URL(string: reward.imageUrls?.first ?? ""))
+                .onFailureImage(UIImage(named: "logo_square"))
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
-                .padding()
-            VStack(alignment: .leading) {
+                .scaledToFit()
+                .frame(height: 150)
+                .padding(.top, 8.0)
+
+            VStack(alignment: .leading, spacing: 8) {
                 Text(reward.name ?? "")
                     .font(.headline)
                 Text(reward.description ?? "")
+                    .multilineTextAlignment(.leading)
                     .font(.subheadline)
-                Spacer()
+                    .foregroundColor(.secondary)
                 HStack {
-                    Text("\(reward.pointCost ?? 0) points")
-                        .font(.subheadline)
+                    Text("\(reward.pointCost ?? 0) Points")
+                        .font(.caption)
+                        .foregroundColor(.orange)
                     Spacer()
                     Text(reward.type ?? "")
-                        .font(.subheadline)
+                        .font(.caption)
+                        .foregroundColor(.red)
+                    Text(reward.state ?? "")
+                        .font(.caption)
                         .foregroundColor(.green)
                 }
+                Button(action: {
+                    // Handle redeem reward action
+                }) {
+                    Text("Redeem")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                        .frame(maxWidth: .infinity)
+                }
             }
-            .padding(.vertical)
-            if reward.state != "active" {
-                Image(systemName: "lock.fill")
-                    .foregroundColor(.red)
-                    .padding()
-            }
+            .padding()
         }
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(radius: 5)
     }
 }
