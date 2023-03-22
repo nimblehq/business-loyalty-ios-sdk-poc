@@ -24,7 +24,7 @@ extension NimbleLoyaltyError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .alreadyAuthenticated:
-            return "You've already been authenticated."
+            return "Authenticated."
         case .clientIdEmpty:
             return "Client Id is empty"
         case .clientSecretEmpty:
@@ -43,14 +43,14 @@ extension NimbleLoyaltyError: LocalizedError {
     }
 }
 
-public final class NimbleLoyalty: NSObject {
+public final class NimbleLoyalty {
 
     public static let shared = NimbleLoyalty()
 
     private let keychain = Keychain.default
-    private let authenticationRepository = AuthenticationRepository()
+    private let sessionManager = AuthenticationSessionManager()
 
-    private override init() {}
+    private init() {}
 
     public func setClientId(_ clientId: String) {
         guard !clientId.isEmpty else {
@@ -72,68 +72,16 @@ public final class NimbleLoyalty: NSObject {
 extension NimbleLoyalty {
 
     public func isAuthenticated() -> Bool {
-        guard let token: KeychainToken = try? keychain.get(.userToken) else {
-            return false
-        }
-        return true
+        sessionManager.isAuthenticated()
     }
 
     public func authenticate(_ completion: @escaping (Result<Void, NimbleLoyaltyError>) -> Void) {
-        guard !isAuthenticated() else {
-            completion(.failure(NimbleLoyaltyError.alreadyAuthenticated))
-            return
-        }
-        guard let clientId: String = try? keychain.get(.clientId) else {
-            completion(.failure(NimbleLoyaltyError.clientIdEmpty))
-            return
-        }
-        guard let signInURL = URL(string: Constants.API.makeAuthRequestUrl(clientId: clientId)) else {
-            completion(.failure(NimbleLoyaltyError.failToCreateSignInURL))
-            return
-        }
+        sessionManager.authenticate(completion)
+    }
 
-        guard let callbackURLScheme = URL(string: Constants.API.redirectURI)?.scheme else {
-            completion(.failure(NimbleLoyaltyError.failToCreateCallbackURL))
-            return
-        }
-        let authenticationSession = ASWebAuthenticationSession(
-            url: signInURL,
-            callbackURLScheme: callbackURLScheme) { [weak self] callbackURL, error in
-                guard let self = self, error == nil, let callbackURL = callbackURL,
-                      let queryItems = URLComponents(string: callbackURL.absoluteString)?.queryItems,
-                      let code = queryItems.first(where: { $0.name == "code" })?.value
-                else {
-                    completion(.failure(NimbleLoyaltyError.failToAuthenticate))
-                    return
-                }
-
-                self.authenticationRepository.getToken(code: code) { result in
-                    switch result {
-                    case let .success(token):
-                        let keyChainToken = KeychainToken(token)
-                        try? self.keychain.set(keyChainToken, for: .userToken)
-                    case .failure(let error):
-                        completion(.failure(NimbleLoyaltyError.failToGetAccessToken(error.error)))
-                    }
-                }
-            }
-
-        authenticationSession.presentationContextProvider = self
-        authenticationSession.prefersEphemeralWebBrowserSession = true
-
-        if !authenticationSession.start() {
-            completion(.failure(NimbleLoyaltyError.failToStartASWebAuthenticationSession))
-        }
+    public func clearSession() {
+        sessionManager.clearSession()
     }
 }
 
-// MARK: Authentication
 
-extension NimbleLoyalty: ASWebAuthenticationPresentationContextProviding {
-
-    public func presentationAnchor(for session: ASWebAuthenticationSession)
-    -> ASPresentationAnchor {
-        let window = UIApplication.shared.windows.first { $0.isKeyWindow }
-        return window ?? ASPresentationAnchor()
-    }
-}
