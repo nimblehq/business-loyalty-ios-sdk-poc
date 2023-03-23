@@ -8,14 +8,16 @@ PODS:
   - IQKeyboardManagerSwift (6.5.11)
   - KeychainAccess (4.2.2)
   - Kingfisher (7.6.2)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
   - Moya/Combine (15.0.0):
     - Moya/Core
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - Nimble (11.2.1)
-  - NimbleLoyalty (0.0.1):
+  - NimbleLoyalty (0.1.0):
     - KeychainAccess
-    - Moya/Combine
+    - Moya
   - Quick (6.1.0)
   - R.swift (7.3.0)
   - Sourcery (1.8.0):
@@ -76,7 +78,7 @@ SPEC CHECKSUMS:
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   Nimble: 516ac503a0fafaa8e41dbb4a70a61be421fa893a
-  NimbleLoyalty: 313119ce6f8cdb95e5e3cea9f854e7dc8e9c6f42
+  NimbleLoyalty: 805850716bf2c3544d9d4e7cd6444cfd053c0f14
   Quick: 6676ffb409bf04abba2ff23902af2407bfc6ac90
   R.swift: cef1c530541cb49412752721797f10dae6b32d11
   Sourcery: 6f5fe49b82b7e02e8c65560cbd52e1be67a1af2e
