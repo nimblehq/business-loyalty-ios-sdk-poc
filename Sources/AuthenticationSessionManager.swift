@@ -18,7 +18,7 @@ final class AuthenticationSessionManager: NSObject {
 extension AuthenticationSessionManager {
 
     func isAuthenticated() -> Bool {
-        guard let token: KeychainToken = try? keychain.get(.userToken) else {
+        guard let _: KeychainToken = try? keychain.get(.userToken) else {
             return false
         }
         return true
