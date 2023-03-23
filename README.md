@@ -49,7 +49,7 @@ To install using Swift Package Manager, add the following line to your dependenc
 
 #### Authentication
 
-Before authenticating the user, remember to set the **clientId** and **clientSecret** (optional).
+Before authenticating the user, remember to set the **clientId** and **clientSecret**.
 
 ```swift
 NimbleLoyalty.shared.setClientId("CLIENT_ID")
