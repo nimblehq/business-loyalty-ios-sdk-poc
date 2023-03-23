@@ -1,8 +1,3 @@
-[![Swift](https://img.shields.io/badge/Swift-5.0_5.1_5.2_3_5.4_5.5_5.6_5.7-orange?style=flat-square)](https://img.shields.io/badge/Swift-5.0_5.1_5.2_5.3_5.4_5.5_5.6_5.7-Orange?style=flat-square)
-[![Platforms](https://img.shields.io/badge/Platforms-macOS_iOS-yellowgreen?style=flat-square)](https://img.shields.io/badge/Platforms-macOS_iOS-Green?style=flat-square)
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Alamofire.svg?style=flat-square)](https://img.shields.io/cocoapods/v/Alamofire.svg)
-[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
-
 This NimbleLoyalty SDK library allows developers to easily integrate loyalty programs into their iOS applications.
 
 - [Features](#features)
