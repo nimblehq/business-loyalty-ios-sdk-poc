@@ -10,12 +10,12 @@ This NimbleLoyalty SDK library allows developers to easily integrate loyalty pro
 
 ## Features
 
-- Authenticate (via Auth0)
+- Authenticate
 - Get reward list
 - Redeem reward
 - Get reward history
 
-## Component Library
+## Component Libraries
 
 - Moya
 - KeychainAccess
@@ -70,7 +70,7 @@ if NimbleLoyalty.shared.isAuthenticated() {
 
 ##### authenticate(completion:)
 
-Initiates the authentication flow with Auth0.
+Initiates the authentication flow.
 
 ```swift
 NimbleLoyalty.shared.authenticate { result in
