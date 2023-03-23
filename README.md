@@ -3,7 +3,7 @@
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Alamofire.svg?style=flat-square)](https://img.shields.io/cocoapods/v/Alamofire.svg)
 [![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat-square)
 
-This NimbleLoyalty SDK is a library that allows developers to integrate loyalty programs into their iOS applications easily.
+This NimbleLoyalty SDK library allows developers to easily integrate loyalty programs into their iOS applications.
 
 - [Features](#features)
 - [Component Libraries](#component-libraries)
@@ -32,14 +32,14 @@ This NimbleLoyalty SDK is a library that allows developers to integrate loyalty 
 
 ## Installation
 
-The iOS Loyalty SDK can be installed using either CocoaPods or Swift Package Manager.
+The iOS Loyalty SDK can be installed using CocoaPods or Swift Package Manager.
 
 ### CocoaPods
 
 To install using CocoaPods, add the following line to your Podfile:
 
 ```
-pod 'iOSLoyaltySDK', '~> 1.0'
+pod 'NimbleLoyalty', '~> 0.1.0'
 ```
 
 ### Swift Package Manager
@@ -54,7 +54,7 @@ To install using Swift Package Manager, add the following line to your dependenc
 
 #### Authentication
 
-Before authenticating user, remember to set the **clientId** and **clientSecret** (optional)
+Before authenticating the user, remember to set the **clientId** and **clientSecret** (optional).
 
 ```swift
 NimbleLoyalty.shared.setClientId("CLIENT_ID")
@@ -63,7 +63,7 @@ NimbleLoyalty.shared.setClientSecret("CLIENT_SECRET")
 
 ##### isAuthenticated()
 
-Checks if the user is authenticated
+Checks if the user is authenticated.
 
 ```swift
 if NimbleLoyalty.shared.isAuthenticated() {
