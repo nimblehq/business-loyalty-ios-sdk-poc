@@ -83,7 +83,7 @@ NimbleLoyalty.shared.authenticate { result in
     case .success:
         // The user is authenticated, do something
     case .failure(let error):
-				print("Error authenticating: \(error.localizedDescription)")
+    	print("Error authenticating: \(error.localizedDescription)")
     }
 }
 ```
@@ -103,15 +103,15 @@ Retrieves the list of available rewards for the authenticated user.
 
 ```swift
 NimbleLoyalty.shared.getRewardList { result in
-		switch result {
-		case .success(let rewardList):
-		    // Display the list of rewards to the user
-		    for reward in rewardList.rewards {
-		        print("Reward name: \(reward.name)")
-		    }
-		case .failure(let error):
-		    print("Error retrieving rewards: \(error.localizedDescription)")
-		}
+   switch result {
+   case .success(let rewardList):
+       // Display the list of rewards to the user
+       for reward in rewardList.rewards {
+           print("Reward name: \(reward.name)")
+       }
+   case .failure(let error):
+       print("Error retrieving rewards: \(error.localizedDescription)")
+   }
 }
 ```
 
@@ -121,12 +121,12 @@ Redeems a reward with the given reward's code for the authenticated user.
 
 ```swift
 NimbleLoyalty.shared.redeemReward(code: "ABC123") { result in
-		switch result {
-		case .success(let rewardList):
-		    print("Reward redeemed with ID: \(redeemReward.id)")
-		case .failure(let error):
-		    print("Error redeeming reward: \(error.localizedDescription)")
-		}
+   switch result {
+   case .success(let rewardList):
+       print("Reward redeemed with ID: \(redeemReward.id)")
+   case .failure(let error):
+       print("Error redeeming reward: \(error.localizedDescription)")
+   }
 }
 ```
 
@@ -136,15 +136,15 @@ Retrieves the reward history for the authenticated user.
 
 ```swift
 NimbleLoyalty.shared.getRewardHistory { result in
-		switch result {
-		case .success(let rewardHistory):
-		    // Display the reward history to the user
-		    for reward in rewardHistory {
-		        print("Reward name: \(reward.name)")
-		    }
-		case .failure(let error):
-		    print("Error retrieving reward history: \(error.localizedDescription)")
-		}
+   switch result {
+   case .success(let rewardHistory):
+       // Display the reward history to the user
+       for reward in rewardHistory {
+           print("Reward name: \(reward.name)")
+       }
+   case .failure(let error):
+       print("Error retrieving reward history: \(error.localizedDescription)")
+   }
 }
 ```
 
