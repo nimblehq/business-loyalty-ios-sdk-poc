@@ -1,34 +1,51 @@
-# Git Repository Template
+This NimbleLoyalty SDK is a library that allows developers to integrate loyalty programs into their iOS applications easily. The SDK provides a set of features that enable the user to authenticate, get a list of available rewards, redeem a reward, and retrieve their reward history.
 
-Project repository template to set up all public projects at [Nimble](https://nimblehq.co/)
+## Features
 
-## Usage
+- Authenticate (via Auth0)
+- Get reward list
+- Redeem reward
+- Get reward history
 
-Clone the repository
+## Component Library
 
-`git clone git@github.com:nimblehq/git-template.git`
+- Moya
+- KeychainAccess
 
-## License
+## Requirements
 
-This project is Copyright (c) 2014 and onwards Nimble. It is free software and may be redistributed under the terms specified in the [LICENSE] file.
+- iOS 14.0+
+- Xcode 14.0+
 
-[LICENSE]: /LICENSE
+## Installation
 
-## About
-<a href="https://nimblehq.co/">
-  <picture>
+The iOS Loyalty SDK can be installed using either CocoaPods or Swift Package Manager.
+
+### CocoaPods
+
+To install using CocoaPods, add the following line to your Podfile:
+
+```
+pod 'iOSLoyaltySDK', '~> 1.0'
+```
+
+### Swift Package Manager
+
+To install using Swift Package Manager, add the following line to your dependencies:
+
+```swift
+.package(url: "https://github.com/nimblehq/business-loyalty-ios-sdk-poc.git", from: "0.1.0")
+```
+
+## Credit
+
+<picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://assets.nimblehq.co/logo/dark/logo-dark-text-160.png">
     <img alt="Nimble logo" src="https://assets.nimblehq.co/logo/light/logo-light-text-160.png">
   </picture>
-</a>
 
 This project is maintained and funded by Nimble.
 
-We ❤️ open source and do our part in sharing our work with the community!
-See [our other projects][community] or [hire our team][hire] to help build your product.
+## License
 
-Want to join? [Check out our Jobs][jobs]!
-
-[community]: https://github.com/nimblehq
-[hire]: https://nimblehq.co/
-[jobs]: https://jobs.nimblehq.co/
+This SDK is licensed under the MIT License. See the [LICENSE] file for more information.
