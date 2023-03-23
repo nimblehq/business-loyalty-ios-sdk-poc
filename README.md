@@ -159,4 +159,6 @@ This project is maintained and funded by Nimble.
 
 ## License
 
-This SDK is licensed under the MIT License. See the [LICENSE] file for more information.
+This project is Copyright (c) 2023 and onwards Nimble. It is free software and may be redistributed under the terms specified in the [LICENSE] file.
+
+[LICENSE]: /LICENSE
