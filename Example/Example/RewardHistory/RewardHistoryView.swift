@@ -112,7 +112,7 @@ struct RewardHistoryItemView: View {
     var body: some View {
         VStack(spacing: 16.0) {
             HStack(alignment: .center, spacing: 16.0) {
-                KFImage(URL(string: reward.images ?? ""))
+                KFImage(URL(string: reward.reward?.imageUrls?.first ?? ""))
                     .onFailureImage(UIImage(named: "logo_square"))
                     .resizable()
                     .frame(width: 56.0, height: 56.0)
@@ -124,7 +124,7 @@ struct RewardHistoryItemView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .foregroundColor(Constants.Color.mirageBlack)
                         .lineLimit(2)
-                    Text("Until \(formatDate(reward.reward?.expiresOn ?? ""))")
+                    Text("Until \(reward.reward?.expiresOn?.formatDate() ?? "")")
                         .font(.system(size: 13.0))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .foregroundColor(Constants.Color.slateGray)
@@ -132,7 +132,7 @@ struct RewardHistoryItemView: View {
                 }
                 Spacer(minLength: 0.0)
                 Button(action: {
-                    // Redeem button action
+                    // Use action
                 }) {
                     HStack {
                         Spacer()
@@ -155,17 +155,6 @@ struct RewardHistoryItemView: View {
                 .padding(.horizontal, 15.0)
         }
         .frame(height: 72.0)
-    }
-
-    private func formatDate(_ dateString: String, format: String = "dd MMM yyyy") -> String {
-        let isoFormatter = ISO8601DateFormatter()
-        if let date = isoFormatter.date(from: dateString) {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = format
-            return dateFormatter.string(from: date)
-        } else {
-            return "Invalid date string"
-        }
     }
 }
 

@@ -105,7 +105,7 @@ struct RewardItemView: View {
                     .lineLimit(2)
             }
             .padding(.horizontal, 8.0)
-            Text("Until \(formatDate(reward.expiresOn ?? ""))")
+            Text("Until \(reward.expiresOn?.formatDate() ?? "")")
                 .font(.system(size: 12.0))
                 .fontWeight(.bold)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -137,17 +137,6 @@ struct RewardItemView: View {
         .border(Constants.Color.catskillWhite, width: 1.0)
         .cornerRadius(4.0)
         .background(Color.white)
-    }
-
-    private func formatDate(_ dateString: String, format: String = "dd MMM yyyy") -> String {
-        let isoFormatter = ISO8601DateFormatter()
-        if let date = isoFormatter.date(from: dateString) {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = format
-            return dateFormatter.string(from: date)
-        } else {
-            return "Invalid date string"
-        }
     }
 }
 
