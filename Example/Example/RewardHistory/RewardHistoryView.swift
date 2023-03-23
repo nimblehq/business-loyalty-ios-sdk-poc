@@ -18,7 +18,11 @@ struct RewardHistoryView: View {
         case .idle:
             setUpView()
                 .onAppear {
-                    viewModel.loadRewardHistory()
+                    if NimbleLoyalty.shared.isAuthenticated() {
+                        viewModel.loadRewardHistory()
+                    } else {
+                        viewModel.addDummies()
+                    }
                 }
         case .loaded:
             setUpView()
@@ -36,7 +40,7 @@ struct RewardHistoryView: View {
 
     private func setUpView() -> some View {
         VStack {
-            Text("Reward History")
+            Text("My Rewards")
                 .font(.largeTitle)
                 .frame(height: 24.0)
                 .padding(.vertical, 20.0)
@@ -65,38 +69,95 @@ struct RewardHistoryItemView: View {
 
     let reward: APIRedeemReward
 
-    var body: some View {
-        HStack(spacing: 10.0) {
-            KFImage(URL(string: reward.images ?? ""))
-                .onFailureImage(UIImage(named: "logo_square"))
-                .resizable()
-                .frame(width: 60, height: 60)
-                .cornerRadius(10)
-            VStack(alignment: .leading, spacing: 5) {
-                Text(reward.reward?.name ?? "")
-                    .font(.headline)
-                Text(reward.reward?.description ?? "")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .lineLimit(2)
-                Text("Redeemed: \(formatDate(reward.createdAt ?? ""))")
-                    .font(.caption)
-                HStack(spacing: 5) {
-                    Text("\(reward.pointCost ?? 0) points")
-                        .font(.caption)
-                    Text("|")
-                        .font(.caption)
-                    Text("Expires: \(formatDate(reward.reward?.expiresOn ?? ""))")
-                        .font(.caption)
+    struct RewardHistoryCell: View {
+        var body: some View {
+            HStack(spacing: 16) {
+                Image("example-image")
+                    .resizable()
+                    .frame(width: 56, height: 56)
+                    .cornerRadius(10)
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Reward Name")
+                        .font(.headline)
+                    Text("Expires on 31 Dec 2022")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
                 }
-                Text(reward.state ?? "")
-                    .font(.caption)
-                    .foregroundColor(reward.state == "Redeemed" ? .green : .red)
+
+                Spacer()
+
+                Button(action: {
+                    // Redeem button action
+                }) {
+                    Text("Use")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
             }
+            .frame(height: 72)
+            .padding(.horizontal, 16)
+            .background(Color.white)
+            .overlay(
+                Divider(),
+                alignment: .bottom
+            )
         }
     }
 
-    private func formatDate(_ dateString: String, format: String = "MM/dd/yyyy") -> String {
+    var body: some View {
+        VStack(spacing: 16.0) {
+            HStack(alignment: .center, spacing: 16.0) {
+                KFImage(URL(string: reward.images ?? ""))
+                    .onFailureImage(UIImage(named: "logo_square"))
+                    .resizable()
+                    .frame(width: 56.0, height: 56.0)
+                    .cornerRadius(4.0)
+                VStack(alignment: .leading, spacing: 4.0) {
+                    Text(reward.reward?.name ?? "")
+                        .font(.system(size: 13.0))
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(Constants.Color.mirageBlack)
+                        .lineLimit(2)
+                    Text("Until \(formatDate(reward.reward?.expiresOn ?? ""))")
+                        .font(.system(size: 13.0))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(Constants.Color.slateGray)
+                        .lineLimit(1)
+                }
+                Spacer(minLength: 0.0)
+                Button(action: {
+                    // Redeem button action
+                }) {
+                    HStack {
+                        Spacer()
+                        Text("Use")
+                            .font(.system(size: 14.0))
+                            .fontWeight(.bold)
+                            .foregroundColor(Constants.Color.havelockBlue)
+                        Spacer()
+                    }
+                }
+                .frame(width: 52.0, height: 32.0)
+                .background(Color.white)
+                .border(Constants.Color.catskillWhite, width: 1.0)
+                .cornerRadius(4.0)
+            }
+            .padding(.horizontal, 15.0)
+            Divider()
+                .frame(height: 1.0)
+                .background(Constants.Color.catskillWhite)
+                .padding(.horizontal, 15.0)
+        }
+        .frame(height: 72.0)
+    }
+
+    private func formatDate(_ dateString: String, format: String = "dd MMM yyyy") -> String {
         let isoFormatter = ISO8601DateFormatter()
         if let date = isoFormatter.date(from: dateString) {
             let dateFormatter = DateFormatter()

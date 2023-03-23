@@ -19,4 +19,17 @@ public struct APIRedeemReward: Decodable {
     public var updatedAt: String?
     public var images: String?
     public var reward: APIReward?
+
+    public init(id: String? = nil, organizationId: String? = nil, customerId: String? = nil, rewardId: String? = nil, state: String? = nil, pointCost: Int? = nil, createdAt: String? = nil, updatedAt: String? = nil, images: String? = nil, reward: APIReward? = nil) {
+        self.id = id
+        self.organizationId = organizationId
+        self.customerId = customerId
+        self.rewardId = rewardId
+        self.state = state
+        self.pointCost = pointCost
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+        self.images = images
+        self.reward = reward
+    }
 }
