@@ -148,7 +148,7 @@ NimbleLoyalty.shared.getRewardHistory { result in
 }
 ```
 
-## Credit
+## Credits
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://assets.nimblehq.co/logo/dark/logo-dark-text-160.png">
