@@ -15,6 +15,7 @@
 		5844475A29CAE478000DDC32 /* RewardHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844475929CAE478000DDC32 /* RewardHistoryView.swift */; };
 		5844475C29CAE483000DDC32 /* RewardHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5844475B29CAE483000DDC32 /* RewardHistoryViewModel.swift */; };
 		585673D229CAC4FE00DE4432 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585673D129CAC4FE00DE4432 /* Constants.swift */; };
+		588BB5A529CD89EA00A5F089 /* RewardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588BB5A429CD89EA00A5F089 /* RewardDetailView.swift */; };
 		58CDDBA829C80B55001A2069 /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBA729C80B55001A2069 /* ExampleApp.swift */; };
 		58CDDBAA29C80B55001A2069 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CDDBA929C80B55001A2069 /* ContentView.swift */; };
 		58CDDBAC29C80B57001A2069 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58CDDBAB29C80B57001A2069 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		5844475929CAE478000DDC32 /* RewardHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardHistoryView.swift; sourceTree = "<group>"; };
 		5844475B29CAE483000DDC32 /* RewardHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardHistoryViewModel.swift; sourceTree = "<group>"; };
 		585673D129CAC4FE00DE4432 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		588BB5A429CD89EA00A5F089 /* RewardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardDetailView.swift; sourceTree = "<group>"; };
 		58CDDBA429C80B55001A2069 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58CDDBA729C80B55001A2069 /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		58CDDBA929C80B55001A2069 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 			path = RewardHistory;
 			sourceTree = "<group>";
 		};
+		588BB5A329CD879100A5F089 /* RewardDetail */ = {
+			isa = PBXGroup;
+			children = (
+				588BB5A429CD89EA00A5F089 /* RewardDetailView.swift */,
+			);
+			path = RewardDetail;
+			sourceTree = "<group>";
+		};
 		58CDDB9B29C80B55001A2069 = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +182,7 @@
 				5844475429CAE233000DDC32 /* Content */,
 				5844475829CAE469000DDC32 /* RewardHistory */,
 				5844475329CAE21E000DDC32 /* RewardList */,
+				588BB5A329CD879100A5F089 /* RewardDetail */,
 				58DC673929CD405800846278 /* Views */,
 				58CDDBAB29C80B57001A2069 /* Assets.xcassets */,
 				58CDDBAD29C80B57001A2069 /* Preview Content */,
@@ -494,6 +505,7 @@
 				58DC673B29CD406E00846278 /* PrimaryButton.swift in Sources */,
 				58CDDBAA29C80B55001A2069 /* ContentView.swift in Sources */,
 				58CDDBA829C80B55001A2069 /* ExampleApp.swift in Sources */,
+				588BB5A529CD89EA00A5F089 /* RewardDetailView.swift in Sources */,
 				5844475C29CAE483000DDC32 /* RewardHistoryViewModel.swift in Sources */,
 				585673D229CAC4FE00DE4432 /* Constants.swift in Sources */,
 				5844475A29CAE478000DDC32 /* RewardHistoryView.swift in Sources */,

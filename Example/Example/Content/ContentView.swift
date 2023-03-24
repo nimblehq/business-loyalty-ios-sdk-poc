@@ -39,61 +39,61 @@ struct ContentView: View {
     }
 
     private func setUpView(isAuthenticated: Bool = false) -> some View {
-        VStack {
-            Spacer()
-            Image("logo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 200.0, height: 56.0)
-            Spacer(minLength: 20.0)
-            if isAuthenticated {
-                PrimaryButton(
-                    isEnabled: .constant(true),
-                    isLoading: false,
-                    action: {
-                        showRewardListView.toggle()
-                    },
-                    title: "Rewards",
-                    height: 56.0
-                )
-                PrimaryButton(
-                    isEnabled: .constant(true),
-                    isLoading: false,
-                    action: {
-                        showRewardHistoryView.toggle()
-                    },
-                    title: "My Rewards",
-                    height: 56.0
-                )
-                PrimaryButton(
-                    isEnabled: .constant(true),
-                    isLoading: false,
-                    action: {
-                        viewModel.signOut()
-                    },
-                    title: "Clear Session",
-                    height: 56.0
-                )
-                .padding(.top, 20.0)
-            } else {
-                PrimaryButton(
-                    isEnabled: .constant(true),
-                    isLoading: false,
-                    action: {
-                        viewModel.signIn()
-                    },
-                    title: "Authenticate",
-                    height: 56.0
-                )
+        NavigationView {
+            VStack {
+                Spacer()
+                Image("logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200.0, height: 56.0)
+                Spacer(minLength: 20.0)
+                if isAuthenticated {
+                    NavigationLink(destination: RewardListView(), isActive: $showRewardListView) {
+                        PrimaryButton(
+                            isEnabled: .constant(true),
+                            isLoading: false,
+                            action: {
+                                showRewardListView.toggle()
+                            },
+                            title: "Rewards",
+                            height: 56.0
+                        )
+                    }
+                    NavigationLink(destination: RewardHistoryView(), isActive: $showRewardHistoryView) {
+                        PrimaryButton(
+                            isEnabled: .constant(true),
+                            isLoading: false,
+                            action: {
+                                showRewardHistoryView.toggle()
+                            },
+                            title: "My Rewards",
+                            height: 56.0
+                        )
+                    }
+                    PrimaryButton(
+                        isEnabled: .constant(true),
+                        isLoading: false,
+                        action: {
+                            viewModel.signOut()
+                        },
+                        title: "Clear Session",
+                        height: 56.0
+                    )
+                    .padding(.top, 20.0)
+                } else {
+                    PrimaryButton(
+                        isEnabled: .constant(true),
+                        isLoading: false,
+                        action: {
+                            viewModel.signIn()
+                        },
+                        title: "Authenticate",
+                        height: 56.0
+                    )
+                }
+                Spacer()
             }
-            Spacer()
-        }
-        .padding()
-        .sheet(isPresented: $showRewardListView) {
-            RewardListView()
-        }
-        .sheet(isPresented: $showRewardHistoryView) {
-            RewardHistoryView()
+            .padding()
         }
     }
 }

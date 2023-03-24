@@ -36,12 +36,6 @@ struct RewardHistoryView: View {
 
     private func setUpView() -> some View {
         VStack {
-            Text("My Rewards")
-                .font(.title2)
-                .fontWeight(.bold)
-                .foregroundColor(Constants.Color.havelockBlue)
-                .frame(height: 24.0)
-                .padding(.vertical, 20.0)
             ScrollView {
                 VStack(spacing: 16.0) {
                     ForEach(viewModel.rewards.indices, id: \.self) { index in
@@ -53,6 +47,19 @@ struct RewardHistoryView: View {
                 }
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack {
+                    Text("My Rewards")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(Constants.Color.havelockBlue)
+                        .frame(height: 24.0)
+                        .padding(.vertical, 20.0)
+                }
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

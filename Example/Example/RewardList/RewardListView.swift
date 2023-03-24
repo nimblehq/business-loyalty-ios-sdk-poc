@@ -50,25 +50,33 @@ struct RewardListView: View {
 
     private func setUpView() -> some View {
         VStack {
-            Text("Rewards")
-                .font(.title2)
-                .fontWeight(.bold)
-                .foregroundColor(Constants.Color.havelockBlue)
-                .frame(height: 24.0)
-                .padding(.vertical, 20.0)
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                    ForEach(viewModel.rewards.indices, id: \.self) { index in
-                        RewardItemView(
-                            reward: viewModel.rewards[index],
-                            action: { code in
-                                viewModel.redeemReward(code: code)
-                            }
-                        )
-                        .tag(index)
+                    ForEach(viewModel.rewards, id: \.self) { reward in
+                        NavigationLink(destination: RewardDetailView(reward: reward)) {
+                            RewardItemView(
+                                reward: reward,
+                                action: { code in
+                                    viewModel.redeemReward(code: code)
+                                }
+                            )
+                        }
                     }
                 }
                 .padding(.horizontal)
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack {
+                    Text("Rewards")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(Constants.Color.havelockBlue)
+                        .frame(height: 24.0)
+                        .padding(.vertical, 20.0)
+                }
             }
         }
     }
