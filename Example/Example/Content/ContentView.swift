@@ -44,63 +44,47 @@ struct ContentView: View {
             Image("logo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 200, height: 56)
+                .frame(width: 200.0, height: 56.0)
             Spacer(minLength: 20.0)
             if isAuthenticated {
-                Button(action: {
-                    showRewardListView.toggle()
-                }) {
-                    Text("Reward List")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                }
-                Button(action: {
-                    showRewardHistoryView.toggle()
-                }) {
-                    Text("Reward History")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                }
-                Button(action: {
-                    viewModel.signOut()
-                }) {
-                    Text("Clear Session")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                }
+                PrimaryButton(
+                    isEnabled: .constant(true),
+                    isLoading: false,
+                    action: {
+                        showRewardListView.toggle()
+                    },
+                    title: "Rewards",
+                    height: 56.0
+                )
+                PrimaryButton(
+                    isEnabled: .constant(true),
+                    isLoading: false,
+                    action: {
+                        showRewardHistoryView.toggle()
+                    },
+                    title: "My Rewards",
+                    height: 56.0
+                )
+                PrimaryButton(
+                    isEnabled: .constant(true),
+                    isLoading: false,
+                    action: {
+                        viewModel.signOut()
+                    },
+                    title: "Clear Session",
+                    height: 56.0
+                )
                 .padding(.top, 20.0)
             } else {
-                Button(action: {
-                    viewModel.signIn()
-                }) {
-                    Text("Sign in")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                }
+                PrimaryButton(
+                    isEnabled: .constant(true),
+                    isLoading: false,
+                    action: {
+                        viewModel.signIn()
+                    },
+                    title: "Authenticate",
+                    height: 56.0
+                )
             }
             Spacer()
         }

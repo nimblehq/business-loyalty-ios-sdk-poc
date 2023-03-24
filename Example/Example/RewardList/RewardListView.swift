@@ -55,7 +55,9 @@ struct RewardListView: View {
     private func setUpView() -> some View {
         VStack {
             Text("Rewards")
-                .font(.largeTitle)
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(Constants.Color.havelockBlue)
                 .frame(height: 24.0)
                 .padding(.vertical, 20.0)
             ScrollView {
@@ -113,24 +115,14 @@ struct RewardItemView: View {
                 .lineLimit(2)
                 .padding(.horizontal, 8.0)
             Spacer(minLength: 0.0)
-            HStack {
-                Spacer()
-                Button(action: {
+            PrimaryButton(
+                isEnabled: .constant(true),
+                isLoading: false,
+                action: {
                     action(reward.id ?? "")
-                }) {
-                    Text("\(reward.pointCost ?? 0) points")
-                        .font(.system(size: 14.0))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(.vertical, 8.0)
-                }
-                .frame(maxWidth: .infinity)
-                .frame(height: 32.0)
-                .padding(.bottom, 8.0)
-                .background(Constants.Color.havelockBlue)
-                .cornerRadius(4.0)
-                Spacer()
-            }
+                },
+                title: "\(reward.pointCost ?? 0) points"
+            )
             .padding(.bottom, 8.0)
         }
         .frame(height: 265.0)

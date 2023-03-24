@@ -41,7 +41,9 @@ struct RewardHistoryView: View {
     private func setUpView() -> some View {
         VStack {
             Text("My Rewards")
-                .font(.largeTitle)
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(Constants.Color.havelockBlue)
                 .frame(height: 24.0)
                 .padding(.vertical, 20.0)
             ScrollView {
@@ -68,46 +70,6 @@ struct RewardHistoryItemView: View {
     }()
 
     let reward: APIRedeemReward
-
-    struct RewardHistoryCell: View {
-        var body: some View {
-            HStack(spacing: 16) {
-                Image("example-image")
-                    .resizable()
-                    .frame(width: 56, height: 56)
-                    .cornerRadius(10)
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Reward Name")
-                        .font(.headline)
-                    Text("Expires on 31 Dec 2022")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                }
-
-                Spacer()
-
-                Button(action: {
-                    // Redeem button action
-                }) {
-                    Text("Use")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                }
-            }
-            .frame(height: 72)
-            .padding(.horizontal, 16)
-            .background(Color.white)
-            .overlay(
-                Divider(),
-                alignment: .bottom
-            )
-        }
-    }
 
     var body: some View {
         VStack(spacing: 16.0) {
