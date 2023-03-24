@@ -18,11 +18,7 @@ struct RewardListView: View {
         case .idle:
             setUpView()
                 .onAppear {
-                    if NimbleLoyalty.shared.isAuthenticated() {
-                        viewModel.loadRewards()
-                    } else {
-                        viewModel.addDummies()
-                    }
+                    viewModel.loadRewards()
                 }
         case .loaded:
             setUpView()

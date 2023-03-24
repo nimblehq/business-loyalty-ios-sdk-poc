@@ -18,11 +18,7 @@ struct RewardHistoryView: View {
         case .idle:
             setUpView()
                 .onAppear {
-                    if NimbleLoyalty.shared.isAuthenticated() {
-                        viewModel.loadRewardHistory()
-                    } else {
-                        viewModel.addDummies()
-                    }
+                    viewModel.loadRewardHistory()
                 }
         case .loaded:
             setUpView()
