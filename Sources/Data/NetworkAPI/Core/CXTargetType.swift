@@ -12,6 +12,7 @@ enum CXTargetType: Equatable {
 
     case getToken(code: String, clientId: String, clientSecret: String)
     case rewards
+    case rewardDetail(code: String)
     case redeemRewards(code: String)
     case redeemHistory
 }
@@ -30,8 +31,10 @@ extension CXTargetType: TargetType, AccessTokenAuthorizable {
             return "oauth/token"
         case .rewards:
             return "rewards.json"
-        case let .redeemRewards(id):
-            return "rewards/\(id)/redeem.json"
+        case let .rewardDetail(code):
+            return "rewards/\(code).json"
+        case let .redeemRewards(code):
+            return "rewards/\(code)/redeem.json"
         case .redeemHistory:
             return "redeemed_rewards.json"
         }
@@ -43,7 +46,7 @@ extension CXTargetType: TargetType, AccessTokenAuthorizable {
             return .post
         case .redeemRewards:
             return .patch
-        case .rewards, .redeemHistory:
+        case .rewards, .rewardDetail, .redeemHistory:
             return .get
         }
     }
