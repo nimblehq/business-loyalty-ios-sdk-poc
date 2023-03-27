@@ -12,6 +12,7 @@ This NimbleLoyalty SDK library allows developers to easily integrate loyalty pro
 
 - Authenticate
 - Get reward list
+- Get reward detail
 - Redeem reward
 - Get reward history
 
@@ -106,6 +107,21 @@ NimbleLoyalty.shared.getRewardList { result in
        }
    case .failure(let error):
        print("Error retrieving rewards: \(error.localizedDescription)")
+   }
+}
+```
+
+#### Get Reward Detail
+
+Retrieves the detail of a specific reward.
+
+```swift
+NimbleLoyalty.shared.getRewardDetail(code: "reward_id") { result in
+   switch result {
+   case .success(let rewardDetail):
+       // Display the reward detail to the user
+   case .failure(let error):
+       print("Error retrieving reward detail: \(error.localizedDescription)")
    }
 }
 ```
