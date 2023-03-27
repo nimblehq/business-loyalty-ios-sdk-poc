@@ -19,9 +19,9 @@ struct NavigationBackButtonModifier: ViewModifier {
             .navigationBarItems(leading: Button(action: action) {
                 Image(systemName: "chevron.left")
                     .foregroundColor(Constants.Color.mirageBlack)
-                    .frame(width: 44, height: 44)
+                    .frame(width: 44.0, height: 44.0)
                     .aspectRatio(1.0, contentMode: .fit)
-                    .padding(.leading, 5)
+                    .padding(.leading, 5.0)
             })
     }
 }
