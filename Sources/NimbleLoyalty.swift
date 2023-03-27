@@ -105,6 +105,21 @@ extension NimbleLoyalty {
         }
     }
 
+    public func getRewardDetail(code: String, _ completion: @escaping (Result<APIReward, NimbleLoyaltyError>) -> Void) {
+        guard isAuthenticated() else {
+            completion(.failure(NimbleLoyaltyError.unauthenticated))
+            return
+        }
+        rewardRepository.getRewardDetail(code: code) { result in
+            switch result {
+            case let .success(rewardDetail):
+                completion(.success(rewardDetail))
+            case let .failure(error):
+                completion(.failure(NimbleLoyaltyError.api(error.error)))
+            }
+        }
+    }
+
     public func redeemReward(code: String, _ completion: @escaping (Result<APIRedeemReward, NimbleLoyaltyError>) -> Void) {
         guard isAuthenticated() else {
             completion(.failure(NimbleLoyaltyError.unauthenticated))

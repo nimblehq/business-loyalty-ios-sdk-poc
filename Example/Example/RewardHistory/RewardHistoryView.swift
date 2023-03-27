@@ -11,6 +11,7 @@ import SwiftUI
 
 struct RewardHistoryView: View {
 
+    @Environment(\.presentationMode) var presentationMode
     @StateObject private var viewModel = RewardHistoryViewModel()
 
     var body: some View {
@@ -36,12 +37,6 @@ struct RewardHistoryView: View {
 
     private func setUpView() -> some View {
         VStack {
-            Text("My Rewards")
-                .font(.title2)
-                .fontWeight(.bold)
-                .foregroundColor(Constants.Color.havelockBlue)
-                .frame(height: 24.0)
-                .padding(.vertical, 20.0)
             ScrollView {
                 VStack(spacing: 16.0) {
                     ForEach(viewModel.rewards.indices, id: \.self) { index in
@@ -53,6 +48,22 @@ struct RewardHistoryView: View {
                 }
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack {
+                    Text("My Rewards")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(Constants.Color.havelockBlue)
+                        .frame(height: 24.0)
+                        .padding(.vertical, 20.0)
+                }
+            }
+        }
+        .modifier(NavigationBackButtonModifier(action: {
+            presentationMode.wrappedValue.dismiss()
+        }))
     }
 }
 

@@ -11,6 +11,7 @@ import SwiftUI
 
 struct RewardListView: View {
 
+    @Environment(\.presentationMode) var presentationMode
     @StateObject private var viewModel = RewardListViewModel()
 
     var body: some View {
@@ -47,30 +48,45 @@ struct RewardListView: View {
                 }
         }
     }
-
+    
     private func setUpView() -> some View {
         VStack {
-            Text("Rewards")
-                .font(.title2)
-                .fontWeight(.bold)
-                .foregroundColor(Constants.Color.havelockBlue)
-                .frame(height: 24.0)
-                .padding(.vertical, 20.0)
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                    ForEach(viewModel.rewards.indices, id: \.self) { index in
-                        RewardItemView(
-                            reward: viewModel.rewards[index],
-                            action: { code in
-                                viewModel.redeemReward(code: code)
-                            }
-                        )
-                        .tag(index)
+                    ForEach(viewModel.rewards, id: \.self) { reward in
+                        NavigationLink(
+                            destination: RewardDetailView(
+                                rewardCode: reward.id ?? ""
+                            )
+                        ) {
+                            RewardItemView(
+                                reward: reward,
+                                action: { code in
+                                    viewModel.redeemReward(code: code)
+                                }
+                            )
+                        }
                     }
                 }
                 .padding(.horizontal)
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack {
+                    Text("Rewards")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(Constants.Color.havelockBlue)
+                        .frame(height: 24.0)
+                        .padding(.vertical, 20.0)
+                }
+            }
+        }
+        .modifier(NavigationBackButtonModifier(action: {
+            presentationMode.wrappedValue.dismiss()
+        }))
     }
 }
 
@@ -117,7 +133,7 @@ struct RewardItemView: View {
                 action: {
                     action(reward.id ?? "")
                 },
-                title: "\(reward.pointCost ?? 0) points"
+                title: "\(reward.pointCost ?? 0) Points"
             )
             .padding(.bottom, 8.0)
         }
