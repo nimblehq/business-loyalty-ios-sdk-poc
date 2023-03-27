@@ -112,8 +112,8 @@ extension NimbleLoyalty {
         }
         rewardRepository.getRewardDetail(code: code) { result in
             switch result {
-            case let .success(rewardList):
-                completion(.success(rewardList))
+            case let .success(rewardDetail):
+                completion(.success(rewardDetail))
             case let .failure(error):
                 completion(.failure(NimbleLoyaltyError.api(error.error)))
             }

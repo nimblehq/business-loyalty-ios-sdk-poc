@@ -95,6 +95,7 @@ struct ContentView: View {
             }
             .padding()
         }
+        .accentColor(Constants.Color.havelockBlue)
     }
 }
 

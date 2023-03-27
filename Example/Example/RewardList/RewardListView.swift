@@ -11,6 +11,7 @@ import SwiftUI
 
 struct RewardListView: View {
 
+    @Environment(\.presentationMode) var presentationMode
     @StateObject private var viewModel = RewardListViewModel()
 
     var body: some View {
@@ -47,13 +48,17 @@ struct RewardListView: View {
                 }
         }
     }
-
+    
     private func setUpView() -> some View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
                     ForEach(viewModel.rewards, id: \.self) { reward in
-                        NavigationLink(destination: RewardDetailView(reward: reward)) {
+                        NavigationLink(
+                            destination: RewardDetailView(
+                                rewardCode: reward.id ?? ""
+                            )
+                        ) {
                             RewardItemView(
                                 reward: reward,
                                 action: { code in
@@ -79,6 +84,9 @@ struct RewardListView: View {
                 }
             }
         }
+        .modifier(NavigationBackButtonModifier(action: {
+            presentationMode.wrappedValue.dismiss()
+        }))
     }
 }
 
@@ -125,7 +133,7 @@ struct RewardItemView: View {
                 action: {
                     action(reward.id ?? "")
                 },
-                title: "\(reward.pointCost ?? 0) points"
+                title: "\(reward.pointCost ?? 0) Points"
             )
             .padding(.bottom, 8.0)
         }

@@ -11,6 +11,7 @@ import SwiftUI
 
 struct RewardHistoryView: View {
 
+    @Environment(\.presentationMode) var presentationMode
     @StateObject private var viewModel = RewardHistoryViewModel()
 
     var body: some View {
@@ -47,6 +48,7 @@ struct RewardHistoryView: View {
                 }
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 VStack {
@@ -59,7 +61,9 @@ struct RewardHistoryView: View {
                 }
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
+        .modifier(NavigationBackButtonModifier(action: {
+            presentationMode.wrappedValue.dismiss()
+        }))
     }
 }
 

@@ -26,4 +26,5 @@ extension Constants.Color {
     static let slateGray = Color(hex: "#718096")
     static let havelockBlue = Color(hex: "#5A67D8")
     static let catskillWhite = Color(hex: "#EDF2F7")
+    static let chateauGreen = Color(hex: "#38A169")
 }
