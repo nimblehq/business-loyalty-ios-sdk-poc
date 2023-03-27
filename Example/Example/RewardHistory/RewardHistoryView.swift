@@ -36,8 +36,10 @@ struct RewardHistoryView: View {
 
     private func setUpView() -> some View {
         VStack {
-            Text("Reward History")
-                .font(.largeTitle)
+            Text("My Rewards")
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(Constants.Color.havelockBlue)
                 .frame(height: 24.0)
                 .padding(.vertical, 20.0)
             ScrollView {
@@ -66,45 +68,51 @@ struct RewardHistoryItemView: View {
     let reward: APIRedeemReward
 
     var body: some View {
-        HStack(spacing: 10.0) {
-            KFImage(URL(string: reward.images ?? ""))
-                .onFailureImage(UIImage(named: "logo_square"))
-                .resizable()
-                .frame(width: 60, height: 60)
-                .cornerRadius(10)
-            VStack(alignment: .leading, spacing: 5) {
-                Text(reward.reward?.name ?? "")
-                    .font(.headline)
-                Text(reward.reward?.description ?? "")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .lineLimit(2)
-                Text("Redeemed: \(formatDate(reward.createdAt ?? ""))")
-                    .font(.caption)
-                HStack(spacing: 5) {
-                    Text("\(reward.pointCost ?? 0) points")
-                        .font(.caption)
-                    Text("|")
-                        .font(.caption)
-                    Text("Expires: \(formatDate(reward.reward?.expiresOn ?? ""))")
-                        .font(.caption)
+        VStack(spacing: 16.0) {
+            HStack(alignment: .center, spacing: 16.0) {
+                KFImage(URL(string: reward.reward?.imageUrls?.first ?? ""))
+                    .onFailureImage(UIImage(named: "logo_square"))
+                    .resizable()
+                    .frame(width: 56.0, height: 56.0)
+                    .cornerRadius(4.0)
+                VStack(alignment: .leading, spacing: 4.0) {
+                    Text(reward.reward?.name ?? "")
+                        .font(.system(size: 13.0))
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(Constants.Color.mirageBlack)
+                        .lineLimit(2)
+                    Text("Until \(reward.reward?.expiresOn?.formatDate() ?? "")")
+                        .font(.system(size: 13.0))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(Constants.Color.slateGray)
+                        .lineLimit(1)
                 }
-                Text(reward.state ?? "")
-                    .font(.caption)
-                    .foregroundColor(reward.state == "Redeemed" ? .green : .red)
+                Spacer(minLength: 0.0)
+                Button(action: {
+                    // Use action
+                }) {
+                    HStack {
+                        Spacer()
+                        Text("Use")
+                            .font(.system(size: 14.0))
+                            .fontWeight(.bold)
+                            .foregroundColor(Constants.Color.havelockBlue)
+                        Spacer()
+                    }
+                }
+                .frame(width: 52.0, height: 32.0)
+                .background(Color.white)
+                .border(Constants.Color.catskillWhite, width: 1.0)
+                .cornerRadius(4.0)
             }
+            .padding(.horizontal, 15.0)
+            Divider()
+                .frame(height: 1.0)
+                .background(Constants.Color.catskillWhite)
+                .padding(.horizontal, 15.0)
         }
-    }
-
-    private func formatDate(_ dateString: String, format: String = "MM/dd/yyyy") -> String {
-        let isoFormatter = ISO8601DateFormatter()
-        if let date = isoFormatter.date(from: dateString) {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = format
-            return dateFormatter.string(from: date)
-        } else {
-            return "Invalid date string"
-        }
+        .frame(height: 72.0)
     }
 }
 
