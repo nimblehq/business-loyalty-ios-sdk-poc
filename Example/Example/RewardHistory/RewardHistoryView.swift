@@ -24,6 +24,8 @@ struct RewardHistoryView: View {
                 }
         case .loaded:
             setUpView()
+        case .loading:
+            setUpView(isLoading: true)
         case let .error(message):
             setUpView()
                 .alert(isPresented: .constant(true)) {
@@ -36,18 +38,26 @@ struct RewardHistoryView: View {
         }
     }
 
-    private func setUpView() -> some View {
+    private func setUpView(isLoading: Bool = false) -> some View {
         VStack {
             ScrollView {
-                VStack(spacing: 16.0) {
-                    ForEach(viewModel.rewards.indices, id: \.self) { index in
-                        RewardHistoryItemView(
-                            reward: viewModel.rewards[index],
-                            useAction: {
-                                showComingSoonAlert.toggle()
-                            }
-                        )
-                        .tag(index)
+                if isLoading {
+                    VStack {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: Constants.Color.havelockBlue))
+                            .frame(maxHeight: .infinity, alignment: .center)
+                    }
+                } else {
+                    VStack(spacing: 16.0) {
+                        ForEach(viewModel.rewards.indices, id: \.self) { index in
+                            RewardHistoryItemView(
+                                reward: viewModel.rewards[index],
+                                useAction: {
+                                    showComingSoonAlert.toggle()
+                                }
+                            )
+                            .tag(index)
+                        }
                     }
                 }
             }

@@ -14,6 +14,7 @@ final class RewardHistoryViewModel: ObservableObject {
     @Published var rewards: [APIRedeemReward] = []
 
     func loadRewardHistory() {
+        state = .loading
         NimbleLoyalty.shared.getRewardHistory { [weak self] result in
             guard let self = self else { return }
 
@@ -32,7 +33,7 @@ extension RewardHistoryViewModel {
 
     enum State: Equatable {
 
-        case idle, loaded
+        case idle, loaded, loading
         case error(String)
     }
 }
