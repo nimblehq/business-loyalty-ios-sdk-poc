@@ -13,10 +13,10 @@ public struct APIRedeemReward: Decodable {
     public var organizationId: String?
     public var customerId: String?
     public var rewardId: String?
-    public var state: String?
+    public var status: String?
     public var pointCost: Int?
+    public var images: String?
     public var createdAt: String?
     public var updatedAt: String?
-    public var images: String?
     public var reward: APIReward?
 }

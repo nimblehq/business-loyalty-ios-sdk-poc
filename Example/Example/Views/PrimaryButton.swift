@@ -17,6 +17,7 @@ struct PrimaryButton: View {
     
     var action: () -> Void
     var title: String
+    var imageName: String?
     var height: CGFloat = 32.0
     var body: some View {
         HStack {
@@ -24,14 +25,23 @@ struct PrimaryButton: View {
             Button(action: action) {
                 if isLoading {
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .black))
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
                         .frame(maxHeight: .infinity, alignment: .center)
                 } else {
-                    Text(title)
-                        .font(.system(size: 14.0))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(.vertical, 8.0)
+                    HStack(spacing: 10.0) {
+                        if let imageName {
+                            Image(systemName: imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundColor(.white)
+                                .frame(width: 20.0, height: 20.0)
+                        }
+                        Text(title)
+                            .font(.system(size: 14.0))
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding(.vertical, 8.0)
+                    }
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: height)

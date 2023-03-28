@@ -15,14 +15,15 @@ public struct APIReward: Decodable, Hashable {
     public var description: String?
     public var conditions: String?
     public var instructions: String?
+    public var images: String?
     public var terms: String?
     public var type: String?
-    public var state: String?
+    public var status: String?
     public var expiresOn: String?
     public var pointCost: Int?
+    public var deletedAt: String?
     public var createdAt: String?
     public var updatedAt: String?
-    public var deletedAt: String?
     public var redeemedRewardsCount: Int?
     public var imageUrls: [String]?
 }
