@@ -26,17 +26,20 @@ final class NetworkAPI: NetworkAPIProtocol {
             switch result {
             case let .success(response):
                 do {
-                    let data = try response.map(T.self, using: self.decoder)
+                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+                    let data = try filteredResponse.map(T.self, using: self.decoder)
                     completion(.success(data))
                 } catch {
                     if let data = try? response.map(APIError.self, using: self.decoder) {
-                        completion(.failure(data))
+                        completion(.failure(NimbleLoyaltyError.api(data.error ?? "")))
+                    } else if response.statusCode == 401 {
+                        completion(.failure(NimbleLoyaltyError.unauthenticated))
                     } else {
-                        completion(.failure(APIError(error: error.localizedDescription)))
+                        completion(.failure(NimbleLoyaltyError.api(error.localizedDescription)))
                     }
                 }
             case let .failure(error):
-                completion(.failure(APIError(error: error.localizedDescription)))
+                completion(.failure(NimbleLoyaltyError.api(error.localizedDescription)))
             }
         }
     }

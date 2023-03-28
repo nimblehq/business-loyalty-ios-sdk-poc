@@ -8,4 +8,4 @@
 import UIKit
 
 typealias HTTPHeaders = [String: String]
-public typealias RequestCompletion<T> = (Result<T, APIError>) -> Void
+public typealias RequestCompletion<T> = (Result<T, NimbleLoyaltyError>) -> Void

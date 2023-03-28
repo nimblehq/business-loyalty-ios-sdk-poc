@@ -9,14 +9,12 @@ import AuthenticationServices
 
 public enum NimbleLoyaltyError: Error {
 
-    case api(String?)
-    case alreadyAuthenticated
+    case api(String)
     case clientIdEmpty
     case clientSecretEmpty
     case failToCreateSignInURL
     case failToCreateCallbackURL
     case failToAuthenticate
-    case failToGetAccessToken(String?)
     case failToStartASWebAuthenticationSession
     case unauthenticated
 }
@@ -26,9 +24,7 @@ extension NimbleLoyaltyError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case let .api(error):
-            return error ?? "Unknown"
-        case .alreadyAuthenticated:
-            return "Already authenticated."
+            return error
         case .clientIdEmpty:
             return "Client Id is empty"
         case .clientSecretEmpty:
@@ -39,8 +35,6 @@ extension NimbleLoyaltyError: LocalizedError {
             return "Could not create the callback URL."
         case .failToAuthenticate:
             return "An error occurred when attempting to sign in."
-        case let .failToGetAccessToken(error):
-            return "Failed to exchange access code for tokens: \(error ?? "Unknown")"
         case .failToStartASWebAuthenticationSession:
             return "Failed to start ASWebAuthenticationSession"
         case .unauthenticated:
@@ -100,7 +94,7 @@ extension NimbleLoyalty {
             case let .success(rewardList):
                 completion(.success(rewardList))
             case let .failure(error):
-                completion(.failure(NimbleLoyaltyError.api(error.error)))
+                completion(.failure(error))
             }
         }
     }
@@ -115,7 +109,7 @@ extension NimbleLoyalty {
             case let .success(rewardDetail):
                 completion(.success(rewardDetail))
             case let .failure(error):
-                completion(.failure(NimbleLoyaltyError.api(error.error)))
+                completion(.failure(error))
             }
         }
     }
@@ -130,7 +124,7 @@ extension NimbleLoyalty {
             case let .success(redeemReward):
                 completion(.success(redeemReward))
             case let .failure(error):
-                completion(.failure(NimbleLoyaltyError.api(error.error)))
+                completion(.failure(error))
             }
         }
     }
@@ -145,7 +139,7 @@ extension NimbleLoyalty {
             case let .success(redeemRewardList):
                 completion(.success(redeemRewardList))
             case let .failure(error):
-                completion(.failure(NimbleLoyaltyError.api(error.error)))
+                completion(.failure(error))
             }
         }
     }
