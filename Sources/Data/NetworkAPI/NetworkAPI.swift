@@ -27,7 +27,6 @@ final class NetworkAPI: NetworkAPIProtocol {
             case let .success(response):
                 do {
                     let filteredResponse = try response.filterSuccessfulStatusCodes()
-                    Self.prettyPrintJsonData(filteredResponse.data)
                     let data = try filteredResponse.map(T.self, using: self.decoder)
                     completion(.success(data))
                 } catch {
@@ -43,11 +42,6 @@ final class NetworkAPI: NetworkAPIProtocol {
                 completion(.failure(NimbleLoyaltyError.network("Unknown", error.localizedDescription)))
             }
         }
-    }
-
-    static func prettyPrintJsonData(_ data: Data) {
-        let stringData = String(data: data, encoding: .utf8) ?? ""
-        print(stringData)
     }
 }
 
