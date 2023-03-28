@@ -32,15 +32,15 @@ final class NetworkAPI: NetworkAPIProtocol {
                     completion(.success(data))
                 } catch {
                     if let data = try? response.map(APIError.self, using: self.decoder) {
-                        completion(.failure(NimbleLoyaltyError.api(data.error ?? "")))
+                        completion(.failure(NimbleLoyaltyError.network(data.error ?? "Unknown", data.errorDescription ?? "Unknown")))
                     } else if response.statusCode == 401 {
                         completion(.failure(NimbleLoyaltyError.unauthenticated))
                     } else {
-                        completion(.failure(NimbleLoyaltyError.api(error.localizedDescription)))
+                        completion(.failure(NimbleLoyaltyError.network("Unknown", error.localizedDescription)))
                     }
                 }
             case let .failure(error):
-                completion(.failure(NimbleLoyaltyError.api(error.localizedDescription)))
+                completion(.failure(NimbleLoyaltyError.network("Unknown", error.localizedDescription)))
             }
         }
     }
