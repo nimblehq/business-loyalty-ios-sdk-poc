@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct APIError: Decodable, Error {
+struct APIError: Decodable, Error {
 
     var error: String?
 }
