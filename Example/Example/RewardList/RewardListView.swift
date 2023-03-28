@@ -23,6 +23,8 @@ struct RewardListView: View {
                 }
         case .loaded:
             setUpView()
+        case .loading:
+            setUpView(isLoading: true)
         case .redeemed:
             setUpView()
                 .alert(isPresented: .constant(true)) {
@@ -49,26 +51,34 @@ struct RewardListView: View {
         }
     }
     
-    private func setUpView() -> some View {
+    private func setUpView(isLoading: Bool = false) -> some View {
         VStack {
             ScrollView {
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                    ForEach(viewModel.rewards, id: \.self) { reward in
-                        NavigationLink(
-                            destination: RewardDetailView(
-                                rewardCode: reward.id ?? ""
-                            )
-                        ) {
-                            RewardItemView(
-                                reward: reward,
-                                action: { code in
-                                    viewModel.redeemReward(code: code)
-                                }
-                            )
+                if isLoading {
+                    VStack {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: Constants.Color.havelockBlue))
+                            .frame(maxHeight: .infinity, alignment: .center)
+                    }
+                } else {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+                        ForEach(viewModel.rewards, id: \.self) { reward in
+                            NavigationLink(
+                                destination: RewardDetailView(
+                                    rewardCode: reward.id
+                                )
+                            ) {
+                                RewardItemView(
+                                    reward: reward,
+                                    action: { code in
+                                        viewModel.redeemReward(code: code)
+                                    }
+                                )
+                            }
                         }
                     }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
             }
         }
         .navigationBarTitleDisplayMode(.inline)
@@ -131,7 +141,7 @@ struct RewardItemView: View {
                 isEnabled: .constant(true),
                 isLoading: false,
                 action: {
-                    action(reward.id ?? "")
+                    action(reward.id)
                 },
                 title: "\(reward.pointCost ?? 0) Points"
             )

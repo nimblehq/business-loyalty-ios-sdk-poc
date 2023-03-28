@@ -26,6 +26,8 @@ struct ContentView: View {
             setUpView()
         case .authenticated:
             setUpView(isAuthenticated: true)
+        case .authenticating:
+            setUpView(isAuthenticating: true)
         case let .error(message):
             setUpView()
                 .alert(isPresented: .constant(true)) {
@@ -38,7 +40,7 @@ struct ContentView: View {
         }
     }
 
-    private func setUpView(isAuthenticated: Bool = false) -> some View {
+    private func setUpView(isAuthenticated: Bool = false, isAuthenticating: Bool = false) -> some View {
         NavigationView {
             VStack {
                 Spacer()
@@ -56,6 +58,7 @@ struct ContentView: View {
                                 showRewardListView.toggle()
                             },
                             title: "Rewards",
+                            imageName: "gift.fill",
                             height: 56.0
                         )
                     }
@@ -67,6 +70,7 @@ struct ContentView: View {
                                 showRewardHistoryView.toggle()
                             },
                             title: "My Rewards",
+                            imageName: "clock.fill",
                             height: 56.0
                         )
                     }
@@ -76,24 +80,26 @@ struct ContentView: View {
                         action: {
                             viewModel.signOut()
                         },
-                        title: "Clear Session",
+                        title: "Sign Out",
+                        imageName: "rectangle.portrait.and.arrow.right.fill",
                         height: 56.0
                     )
                     .padding(.top, 20.0)
                 } else {
                     PrimaryButton(
                         isEnabled: .constant(true),
-                        isLoading: false,
+                        isLoading: isAuthenticating,
                         action: {
                             viewModel.signIn()
                         },
-                        title: "Authenticate",
+                        title: "Sign In",
+                        imageName: "person.fill",
                         height: 56.0
                     )
                 }
                 Spacer()
             }
-            .padding()
+            .padding(.horizontal, 40.0)
         }
         .accentColor(Constants.Color.mirageBlack)
     }

@@ -14,6 +14,7 @@ final class RewardListViewModel: ObservableObject {
     @Published var rewards: [APIReward] = []
     
     func loadRewards() {
+        state = .loading
         NimbleLoyalty.shared.getRewardList { [weak self] result in
             guard let self = self else { return }
             
@@ -44,7 +45,7 @@ extension RewardListViewModel {
     
     enum State: Equatable {
         
-        case idle, loaded, redeemed
+        case idle, loaded, loading, redeemed
         case error(String)
     }
 }

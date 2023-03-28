@@ -13,6 +13,7 @@ struct RewardHistoryView: View {
 
     @Environment(\.presentationMode) var presentationMode
     @StateObject private var viewModel = RewardHistoryViewModel()
+    @State private var showComingSoonAlert = false
 
     var body: some View {
         switch viewModel.state {
@@ -23,6 +24,8 @@ struct RewardHistoryView: View {
                 }
         case .loaded:
             setUpView()
+        case .loading:
+            setUpView(isLoading: true)
         case let .error(message):
             setUpView()
                 .alert(isPresented: .constant(true)) {
@@ -35,15 +38,26 @@ struct RewardHistoryView: View {
         }
     }
 
-    private func setUpView() -> some View {
+    private func setUpView(isLoading: Bool = false) -> some View {
         VStack {
             ScrollView {
-                VStack(spacing: 16.0) {
-                    ForEach(viewModel.rewards.indices, id: \.self) { index in
-                        RewardHistoryItemView(
-                            reward: viewModel.rewards[index]
-                        )
-                        .tag(index)
+                if isLoading {
+                    VStack {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: Constants.Color.havelockBlue))
+                            .frame(maxHeight: .infinity, alignment: .center)
+                    }
+                } else {
+                    VStack(spacing: 16.0) {
+                        ForEach(viewModel.rewards.indices, id: \.self) { index in
+                            RewardHistoryItemView(
+                                reward: viewModel.rewards[index],
+                                useAction: {
+                                    showComingSoonAlert.toggle()
+                                }
+                            )
+                            .tag(index)
+                        }
                     }
                 }
             }
@@ -64,6 +78,13 @@ struct RewardHistoryView: View {
         .modifier(NavigationBackButtonModifier(action: {
             presentationMode.wrappedValue.dismiss()
         }))
+        .alert(isPresented: $showComingSoonAlert) {
+            Alert(
+                title: Text("Example"),
+                message: Text("Coming Soon"),
+                dismissButton: Alert.Button.default(Text("OK"))
+            )
+        }
     }
 }
 
@@ -77,7 +98,7 @@ struct RewardHistoryItemView: View {
     }()
 
     let reward: APIRedeemReward
-
+    var useAction: () -> Void
     var body: some View {
         VStack(spacing: 16.0) {
             HStack(alignment: .center, spacing: 16.0) {
@@ -101,7 +122,7 @@ struct RewardHistoryItemView: View {
                 }
                 Spacer(minLength: 0.0)
                 Button(action: {
-                    // Use action
+                    useAction()
                 }) {
                     HStack {
                         Spacer()

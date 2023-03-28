@@ -18,6 +18,7 @@ final class ContentViewModel: ObservableObject {
     }
 
     func signIn() {
+        state = .authenticating
         DispatchQueue.main.async {
             NimbleLoyalty.shared.authenticate { [weak self] result in
                 guard let self = self else { return }
@@ -41,7 +42,7 @@ extension ContentViewModel {
 
     enum State: Equatable {
 
-        case idle, unauthenticated, authenticated
+        case idle, unauthenticated, authenticated, authenticating
         case error(String)
     }
 }

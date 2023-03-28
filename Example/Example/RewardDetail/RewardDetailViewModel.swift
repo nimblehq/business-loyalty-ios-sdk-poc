@@ -19,6 +19,7 @@ final class RewardDetailViewModel: ObservableObject {
     }
 
     func loadRewardDetail() {
+        state = .loading
         NimbleLoyalty.shared.getRewardDetail(code: rewardCode) { [weak self] result in
             guard let self = self else { return }
 
@@ -33,6 +34,7 @@ final class RewardDetailViewModel: ObservableObject {
     }
 
     func redeemReward() {
+        state = .redeeming
         NimbleLoyalty.shared.redeemReward(code: rewardCode) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -49,7 +51,7 @@ extension RewardDetailViewModel {
 
     enum State: Equatable {
 
-        case idle, loaded, redeemed
+        case idle, loaded, loading, redeeming, redeemed
         case error(String)
     }
 }

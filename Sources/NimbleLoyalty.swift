@@ -9,7 +9,7 @@ import AuthenticationServices
 
 public enum NimbleLoyaltyError: Error {
 
-    case api(String)
+    case network(String, String)
     case clientIdEmpty
     case clientSecretEmpty
     case failToCreateSignInURL
@@ -23,8 +23,8 @@ extension NimbleLoyaltyError: LocalizedError {
 
     public var errorDescription: String? {
         switch self {
-        case let .api(error):
-            return error
+        case let .network(errorTitle, errorDescription):
+            return "\(errorTitle): \(errorDescription)"
         case .clientIdEmpty:
             return "Client Id is empty"
         case .clientSecretEmpty:
