@@ -20,7 +20,7 @@ final class AuthenticationRepository: AuthenticationRepositoryProtocol {
     
     func getToken(code: String, _ completion: @escaping RequestCompletion<APIToken>) {
         guard let clientId: String = try? keychain.get(.clientId) else {
-            completion(.failure(.init(error: "Missing client id")))
+            completion(.failure(NimbleLoyaltyError.clientIdEmpty))
             return
         }
         let clientSecret: String? = try? keychain.get(.clientSecret)
@@ -34,4 +34,3 @@ final class AuthenticationRepository: AuthenticationRepositoryProtocol {
         )
     }
 }
-

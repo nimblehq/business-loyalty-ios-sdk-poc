@@ -1,35 +1,41 @@
 //
-//  RewardListViewModel.swift
+//  RewardDetailViewModel.swift
 //  Example
 //
-//  Created by David Bui on 22/03/2023.
+//  Created by David Bui on 27/03/2023.
 //
 
 import Combine
 import NimbleLoyalty
 
-final class RewardListViewModel: ObservableObject {
-    
+final class RewardDetailViewModel: ObservableObject {
+
     @Published var state: State = .idle
-    @Published var rewards: [APIReward] = []
-    
-    func loadRewards() {
+    @Published var rewardCode: String
+    @Published var reward: APIReward?
+
+    init(rewardCode: String) {
+        self.rewardCode = rewardCode
+    }
+
+    func loadRewardDetail() {
         state = .loading
-        NimbleLoyalty.shared.getRewardList { [weak self] result in
+        NimbleLoyalty.shared.getRewardDetail(code: rewardCode) { [weak self] result in
             guard let self = self else { return }
-            
+
             switch result {
-            case let .success(rewardList):
-                self.rewards = rewardList.rewards ?? []
+            case let .success(rewardDetail):
+                self.reward = rewardDetail
                 self.state = .loaded
             case let .failure(error):
                 self.state = .error(error.localizedDescription)
             }
         }
     }
-    
-    func redeemReward(code: String) {
-        NimbleLoyalty.shared.redeemReward(code: code) { [weak self] result in
+
+    func redeemReward() {
+        state = .redeeming
+        NimbleLoyalty.shared.redeemReward(code: rewardCode) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success:
@@ -41,11 +47,11 @@ final class RewardListViewModel: ObservableObject {
     }
 }
 
-extension RewardListViewModel {
-    
+extension RewardDetailViewModel {
+
     enum State: Equatable {
-        
-        case idle, loaded, loading, redeemed
+
+        case idle, loaded, loading, redeeming, redeemed
         case error(String)
     }
 }

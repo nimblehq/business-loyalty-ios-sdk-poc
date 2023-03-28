@@ -25,10 +25,6 @@ extension AuthenticationSessionManager {
     }
     
     func authenticate(_ completion: @escaping (Result<Void, NimbleLoyaltyError>) -> Void) {
-        guard !isAuthenticated() else {
-            completion(.failure(NimbleLoyaltyError.alreadyAuthenticated))
-            return
-        }
         guard let clientId: String = try? keychain.get(.clientId) else {
             completion(.failure(NimbleLoyaltyError.clientIdEmpty))
             return
@@ -60,7 +56,7 @@ extension AuthenticationSessionManager {
                         try? self.keychain.set(keyChainToken, for: .userToken)
                         completion(.success(()))
                     case .failure(let error):
-                        completion(.failure(NimbleLoyaltyError.failToGetAccessToken(error.error)))
+                        completion(.failure(error))
                     }
                 }
             }

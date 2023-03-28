@@ -26,6 +26,8 @@ struct ContentView: View {
             setUpView()
         case .authenticated:
             setUpView(isAuthenticated: true)
+        case .authenticating:
+            setUpView(isAuthenticating: true)
         case let .error(message):
             setUpView()
                 .alert(isPresented: .constant(true)) {
@@ -38,79 +40,68 @@ struct ContentView: View {
         }
     }
 
-    private func setUpView(isAuthenticated: Bool = false) -> some View {
-        VStack {
-            Spacer()
-            Image("logo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 200, height: 56)
-            Spacer(minLength: 20.0)
-            if isAuthenticated {
-                Button(action: {
-                    showRewardListView.toggle()
-                }) {
-                    Text("Reward List")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
+    private func setUpView(isAuthenticated: Bool = false, isAuthenticating: Bool = false) -> some View {
+        NavigationView {
+            VStack {
+                Spacer()
+                Image("logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200.0, height: 56.0)
+                Spacer(minLength: 20.0)
+                if isAuthenticated {
+                    NavigationLink(destination: RewardListView(), isActive: $showRewardListView) {
+                        PrimaryButton(
+                            isEnabled: .constant(true),
+                            isLoading: false,
+                            action: {
+                                showRewardListView.toggle()
+                            },
+                            title: "Rewards",
+                            imageName: "gift.fill",
+                            height: 56.0
+                        )
+                    }
+                    NavigationLink(destination: RewardHistoryView(), isActive: $showRewardHistoryView) {
+                        PrimaryButton(
+                            isEnabled: .constant(true),
+                            isLoading: false,
+                            action: {
+                                showRewardHistoryView.toggle()
+                            },
+                            title: "My Rewards",
+                            imageName: "clock.fill",
+                            height: 56.0
+                        )
+                    }
+                    PrimaryButton(
+                        isEnabled: .constant(true),
+                        isLoading: false,
+                        action: {
+                            viewModel.signOut()
+                        },
+                        title: "Sign Out",
+                        imageName: "rectangle.portrait.and.arrow.right.fill",
+                        height: 56.0
+                    )
+                    .padding(.top, 20.0)
+                } else {
+                    PrimaryButton(
+                        isEnabled: .constant(true),
+                        isLoading: isAuthenticating,
+                        action: {
+                            viewModel.signIn()
+                        },
+                        title: "Sign In",
+                        imageName: "person.fill",
+                        height: 56.0
+                    )
                 }
-                Button(action: {
-                    showRewardHistoryView.toggle()
-                }) {
-                    Text("Reward History")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                }
-                Button(action: {
-                    viewModel.signOut()
-                }) {
-                    Text("Clear Session")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                }
-                .padding(.top, 20.0)
-            } else {
-                Button(action: {
-                    viewModel.signIn()
-                }) {
-                    Text("Sign in")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                }
+                Spacer()
             }
-            Spacer()
+            .padding(.horizontal, 40.0)
         }
-        .padding()
-        .sheet(isPresented: $showRewardListView) {
-            RewardListView()
-        }
-        .sheet(isPresented: $showRewardHistoryView) {
-            RewardHistoryView()
-        }
+        .accentColor(Constants.Color.mirageBlack)
     }
 }
 
