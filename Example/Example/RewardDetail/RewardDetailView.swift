@@ -51,8 +51,6 @@ struct RewardDetailView: View {
 
     init(rewardCode: String) {
         _viewModel = StateObject(wrappedValue: RewardDetailViewModel(rewardCode: rewardCode))
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().shadowImage = UIImage()
     }
 
     private func setUpView() -> some View {

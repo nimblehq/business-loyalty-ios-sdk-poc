@@ -56,7 +56,7 @@ struct RewardListView: View {
                     ForEach(viewModel.rewards, id: \.self) { reward in
                         NavigationLink(
                             destination: RewardDetailView(
-                                rewardCode: reward.id ?? ""
+                                rewardCode: reward.id
                             )
                         ) {
                             RewardItemView(
@@ -131,7 +131,7 @@ struct RewardItemView: View {
                 isEnabled: .constant(true),
                 isLoading: false,
                 action: {
-                    action(reward.id ?? "")
+                    action(reward.id)
                 },
                 title: "\(reward.pointCost ?? 0) Points"
             )

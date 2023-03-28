@@ -13,6 +13,7 @@ struct RewardHistoryView: View {
 
     @Environment(\.presentationMode) var presentationMode
     @StateObject private var viewModel = RewardHistoryViewModel()
+    @State private var showComingSoonAlert = false
 
     var body: some View {
         switch viewModel.state {
@@ -41,7 +42,10 @@ struct RewardHistoryView: View {
                 VStack(spacing: 16.0) {
                     ForEach(viewModel.rewards.indices, id: \.self) { index in
                         RewardHistoryItemView(
-                            reward: viewModel.rewards[index]
+                            reward: viewModel.rewards[index],
+                            useAction: {
+                                showComingSoonAlert.toggle()
+                            }
                         )
                         .tag(index)
                     }
@@ -64,6 +68,13 @@ struct RewardHistoryView: View {
         .modifier(NavigationBackButtonModifier(action: {
             presentationMode.wrappedValue.dismiss()
         }))
+        .alert(isPresented: $showComingSoonAlert) {
+            Alert(
+                title: Text("Example"),
+                message: Text("Coming Soon"),
+                dismissButton: Alert.Button.default(Text("OK"))
+            )
+        }
     }
 }
 
@@ -77,7 +88,7 @@ struct RewardHistoryItemView: View {
     }()
 
     let reward: APIRedeemReward
-
+    var useAction: () -> Void
     var body: some View {
         VStack(spacing: 16.0) {
             HStack(alignment: .center, spacing: 16.0) {
@@ -101,7 +112,7 @@ struct RewardHistoryItemView: View {
                 }
                 Spacer(minLength: 0.0)
                 Button(action: {
-                    // Use action
+                    useAction()
                 }) {
                     HStack {
                         Spacer()
