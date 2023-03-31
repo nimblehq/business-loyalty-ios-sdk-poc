@@ -161,12 +161,10 @@ NimbleLoyalty.shared.getRewardHistory { result in
 
 ## Samples
 
-Open `Example` folder and build the project
-
-1. Navigate to the Example folder
-2. Run  `pod install`
-3. Open Example.xcworkspace
-4. Build and run the project
+1. Navigate to the Example folder.
+2. Run  `pod install`.
+3. Open Example.xcworkspace.
+4. Build and run the project.
 
 ------------
 
