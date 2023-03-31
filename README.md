@@ -159,6 +159,25 @@ NimbleLoyalty.shared.getRewardHistory { result in
 }
 ```
 
+## Samples
+
+1. Navigate to the Example folder.
+2. Run  `pod install`.
+3. Open Example.xcworkspace.
+4. Build and run the project.
+
+------------
+
+| Example                                                      |                                                              |
+| :----------------------------------------------------------- | ------------------------------------------------------------ |
+| <br><br> Home screen that demonstrate features from SDK <br><br>• Sign-in<br>• Reward List<br>• Reward History<br><br><br> | <img src="readme/home.png" width="240" alt="Home">           |
+|                                                              |                                                              |
+| <br><br> Reward List screen that show reward information. <br><br> • Image<br>• Title & description<br>• Expiration<br>• Reward redemption<br><br><br> | <img src="readme/reward_list.png" width="240" alt="RewardList"> |
+|                                                              |                                                              |
+| <br><br> Reward Details screen that show reward information. <br><br> • Image<br>• Title & description<br>• Expiration<br>• Reward redemption<br>• Terms<br><br><br> | <img src="readme/reward_details.png" width="240" alt="RewardDetails"> |
+|                                                              |                                                              |
+| <br><br> Reward History screen that show redeemed reward information. <br><br> • Image<br>• Title<br>• Expiration<br><br><br> | <img src="readme/reward_history.png" width="240" alt="RewardHistory"> |
+
 ## Credits
 
 <picture>
