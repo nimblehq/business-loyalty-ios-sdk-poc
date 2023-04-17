@@ -162,9 +162,12 @@ NimbleLoyalty.shared.getRewardHistory { result in
 ## Samples
 
 1. Navigate to the Example folder.
-2. Run  `pod install`.
-3. Open Example.xcworkspace.
-4. Build and run the project.
+2. Fill environment values in .env.example and rename it to .env
+3. Run `bundle install`
+4. Run `bundle exec arkana`
+5. Run `bundle exec pod install`.
+6. Open Example.xcworkspace.
+7. Build and run the project.
 
 ------------
 
