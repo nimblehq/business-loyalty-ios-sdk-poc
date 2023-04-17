@@ -145,7 +145,7 @@ extension NimbleLoyalty {
         }
     }
     
-    public func getProductList(_ completion: @escaping (Result<APIProductList, NimbleLoyaltyError>) -> Void) {
+    public func getProductList(_ completion: @escaping (Result<[APIProduct], NimbleLoyaltyError>) -> Void) {
         guard isAuthenticated() else {
             completion(.failure(NimbleLoyaltyError.unauthenticated))
             return
@@ -160,12 +160,12 @@ extension NimbleLoyalty {
         }
     }
     
-    public func getProductDetail(code: String, _ completion: @escaping (Result<APIProduct, NimbleLoyaltyError>) -> Void) {
+    public func getProductDetail(id: String, _ completion: @escaping (Result<APIProduct, NimbleLoyaltyError>) -> Void) {
         guard isAuthenticated() else {
             completion(.failure(NimbleLoyaltyError.unauthenticated))
             return
         }
-        productRepository.getProductDetail(code: code) { result in
+        productRepository.getProductDetail(id: id) { result in
             switch result {
             case let .success(productDetail):
                 completion(.success(productDetail))

@@ -16,7 +16,7 @@ enum CXTargetType: Equatable {
     case redeemRewards(code: String)
     case redeemHistory
     case products
-    case productDetail(code: String)
+    case productDetail(id: String)
 }
 
 extension CXTargetType: TargetType, AccessTokenAuthorizable {

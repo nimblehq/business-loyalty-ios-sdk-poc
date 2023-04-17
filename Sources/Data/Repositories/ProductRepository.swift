@@ -13,11 +13,11 @@ final class ProductRepository: ProductRepositoryProtocol {
         self.networkAPI = networkAPI
     }
 
-    func getProductList(_ completion: @escaping RequestCompletion<APIProductList>) {
+    func getProductList(_ completion: @escaping RequestCompletion<[APIProduct]>) {
         networkAPI.performRequest(.products, completion: completion)
     }
 
-    func getProductDetail(code: String, _ completion: @escaping RequestCompletion<APIProduct>) {
-        networkAPI.performRequest(.productDetail(code: code), completion: completion)
+    func getProductDetail(id: String, _ completion: @escaping RequestCompletion<APIProduct>) {
+        networkAPI.performRequest(.productDetail(id: id), completion: completion)
     }
 }

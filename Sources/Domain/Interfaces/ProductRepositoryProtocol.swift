@@ -9,6 +9,6 @@ import Foundation
 
 protocol ProductRepositoryProtocol: AnyObject {
 
-    func getProductList(_ completion: @escaping RequestCompletion<APIProductList>)
-    func getProductDetail(code: String, _ completion: @escaping RequestCompletion<APIProduct>)
+    func getProductList(_ completion: @escaping RequestCompletion<[APIProduct]>)
+    func getProductDetail(id: String, _ completion: @escaping RequestCompletion<APIProduct>)
 }
