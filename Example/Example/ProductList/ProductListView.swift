@@ -56,9 +56,7 @@ struct ProductListView: View {
                             ) {
                                 ProductItemView(
                                     product: product,
-                                    action: { code in
-//                                        viewModel.redeemReward(code: code)
-                                    }
+                                    action: { code in }
                                 )
                             }
                         }

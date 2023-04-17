@@ -82,16 +82,6 @@ struct ProductDetailView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .foregroundColor(Constants.Color.slateGray)
                             .padding(.horizontal, 15.0)
-//                        PrimaryButton(
-//                            isEnabled: .constant(true),
-//                            isLoading: isRedeeming,
-//                            action: {},
-//                            title: "Redeem \(viewModel.reward?.pointCost ?? 0) Points",
-//                            height: 56.0
-//                        )
-//                        .frame(height: 56.0)
-//                        .padding(.bottom, 20.0)
-//                        .padding(.horizontal, 10.0)
                     }
                 }
             }
