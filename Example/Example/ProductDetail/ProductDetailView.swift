@@ -65,7 +65,7 @@ struct ProductDetailView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .foregroundColor(Constants.Color.mirageBlack)
                                 .lineLimit(1)
-                            Text("\(viewModel.product?.displayPrice ?? "") THB")
+                            Text("\(viewModel.product?.displayPrice ?? "") SGD")
                                 .font(.system(size: 17.0))
                                 .fontWeight(.bold)
                                 .frame(maxWidth: .infinity, alignment: .leading)
