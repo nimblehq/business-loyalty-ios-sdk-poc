@@ -18,6 +18,8 @@ extension Constants.App {
 
     static let clientId: String = ExampleKeys.Keys.Debug().clientId
     static let clientSecret: String = ExampleKeys.Keys.Debug().clientSecret
+    
+    static let currency = "SGD"
 }
 
 extension Constants.Color {
