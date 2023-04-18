@@ -15,6 +15,8 @@ This NimbleLoyalty SDK library allows developers to easily integrate loyalty pro
 - Get reward detail
 - Redeem reward
 - Get reward history
+- Get product list
+- Get product detail
 
 ## Component Libraries
 
@@ -159,12 +161,48 @@ NimbleLoyalty.shared.getRewardHistory { result in
 }
 ```
 
+#### Get Product List
+
+Retrieves the list of available products for the authenticated user.
+
+```swift
+NimbleLoyalty.shared.getProductList { result in
+   switch result {
+   case .success(let products):
+       // Display the list of products to the user
+       for product in products {
+           print("Product name: \(product.name)")
+       }
+   case .failure(let error):
+       print("Error retrieving products: \(error.localizedDescription)")
+   }
+}
+```
+
+#### Get Product Detail
+
+Retrieves the detail of a specific product.
+
+```swift
+NimbleLoyalty.shared.getProductDetail(id: "product_id") { result in
+   switch result {
+   case .success(let productDetail):
+       // Display the reward detail to the user
+   case .failure(let error):
+       print("Error retrieving reward detail: \(error.localizedDescription)")
+   }
+}
+```
+
 ## Samples
 
 1. Navigate to the Example folder.
-2. Run  `pod install`.
-3. Open Example.xcworkspace.
-4. Build and run the project.
+2. Fill environment values in .env.example and rename it to .env
+3. Run `bundle install`
+4. Run `bundle exec arkana`
+5. Run `bundle exec pod install`.
+6. Open Example.xcworkspace.
+7. Build and run the project.
 
 ------------
 
@@ -177,6 +215,10 @@ NimbleLoyalty.shared.getRewardHistory { result in
 | <br><br> Reward Details screen that show reward information. <br><br> • Image<br>• Title & description<br>• Expiration<br>• Reward redemption<br>• Terms<br><br><br> | <img src="readme/reward_details.png" width="240" alt="RewardDetails"> |
 |                                                              |                                                              |
 | <br><br> Reward History screen that show redeemed reward information. <br><br> • Image<br>• Title<br>• Expiration<br><br><br> | <img src="readme/reward_history.png" width="240" alt="RewardHistory"> |
+|                                                              |                                                              |
+| <br><br> Product List screen that show product information. <br><br> • Image<br>• Title & description<br><br><br> | <img src="readme/product_list.png" width="240" alt="ProductList"> |
+|                                                              |                                                              |
+| <br><br> Product Details screen that shows product information. <br><br> • Image<br>• Title & description<br><br><br> | <img src="readme/product_details.png" width="240" alt="ProductDetails"> |
 
 ## Credits
 

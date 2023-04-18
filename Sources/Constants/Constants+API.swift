@@ -11,7 +11,7 @@ extension Constants.API {
 
     static let baseUrl: String = "https://cx-web.herokuapp.com/"
     static let authUrl: String = "https://cx-web.herokuapp.com/oauth/authorize"
-    static let redirectURI: String = "nimble-cx://oauth/callback"
+    static let redirectURI: String = "cx.nimblehq.pos://oauth/callback"
     static let responseType: String = "code"
     static let scope: String = "read"
 

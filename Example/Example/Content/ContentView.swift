@@ -14,6 +14,7 @@ struct ContentView: View {
     @StateObject private var viewModel = ContentViewModel()
     @State var showRewardListView = false
     @State var showRewardHistoryView = false
+    @State var showProductListView = false
 
     var body: some View {
         switch viewModel.state {
@@ -71,6 +72,18 @@ struct ContentView: View {
                             },
                             title: "My Rewards",
                             imageName: "clock.fill",
+                            height: 56.0
+                        )
+                    }
+                    NavigationLink(destination: ProductListView(), isActive: $showProductListView) {
+                        PrimaryButton(
+                            isEnabled: .constant(true),
+                            isLoading: false,
+                            action: {
+                                showProductListView.toggle()
+                            },
+                            title: "Product list",
+                            imageName: "cart.fill",
                             height: 56.0
                         )
                     }

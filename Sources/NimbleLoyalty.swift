@@ -50,6 +50,7 @@ public final class NimbleLoyalty {
     private let keychain = Keychain.default
     private let sessionManager = AuthenticationSessionManager()
     private let rewardRepository = RewardRepository()
+    private let productRepository = ProductRepository()
 
     private init() {}
 
@@ -138,6 +139,36 @@ extension NimbleLoyalty {
             switch result {
             case let .success(redeemRewardList):
                 completion(.success(redeemRewardList))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    public func getProductList(_ completion: @escaping (Result<[APIProduct], NimbleLoyaltyError>) -> Void) {
+        guard isAuthenticated() else {
+            completion(.failure(NimbleLoyaltyError.unauthenticated))
+            return
+        }
+        productRepository.getProductList { result in
+            switch result {
+            case let .success(productList):
+                completion(.success(productList))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    public func getProductDetail(id: String, _ completion: @escaping (Result<APIProduct, NimbleLoyaltyError>) -> Void) {
+        guard isAuthenticated() else {
+            completion(.failure(NimbleLoyaltyError.unauthenticated))
+            return
+        }
+        productRepository.getProductDetail(id: id) { result in
+            switch result {
+            case let .success(productDetail):
+                completion(.success(productDetail))
             case let .failure(error):
                 completion(.failure(error))
             }
