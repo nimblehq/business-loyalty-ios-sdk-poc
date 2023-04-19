@@ -242,6 +242,66 @@ NimbleLoyalty.shared.submitOrder(cart_id: "cart_id") { result in
 }
 ```
 
+#### Get Cart Details
+
+Retrieves the Cart details.
+
+```swift
+NimbleLoyalty.shared.getCartDetails { result in
+   switch result {
+   case .success(let cart):
+       // Display the cart details to the user
+   case .failure(let error):
+       print("Error retrieving cart details: \(error.localizedDescription)")
+   }
+}
+```
+
+#### Add Cart Item
+
+Adds an item to the cart.
+
+```swift
+NimbleLoyalty.shared.addCartItem(item: APIAddCartItem(productId: "order_id", quantity: 2)) { result in
+   switch result {
+   case .success(let cart):
+       // Display the cart details to the user
+   case .failure(let error):
+       print("Error adding item to cart: \(error.localizedDescription)")
+   }
+}
+```
+
+#### Update Cart Item
+
+Updates the quantity for an item in the cart.
+
+```swift
+NimbleLoyalty.shared.updateCartItem(item: APIUpdateCartItemQuantity(lineItemId: "line_item_id", quantity: 6)) { result in
+   switch result {
+   case .success(let cart):
+       // Display the cart details to the user
+   case .failure(let error):
+       print("Error updating quantity for item in cart: \(error.localizedDescription)")
+   }
+}
+```
+
+#### Remove Cart Item
+
+Removes an item from the Cart.
+
+```swift
+NimbleLoyalty.shared.removeCartItem(id: "id") { result in
+   switch result {
+   case .success(let cart):
+       // Display the cart details to the user
+   case .failure(let error):
+       print("Error removing item from cart: \(error.localizedDescription)")
+   }
+}
+```
+
 ## Samples
 
 1. Navigate to the Example folder.

@@ -20,6 +20,10 @@ enum CXTargetType: Equatable {
     case orders
     case orderDetail(orderId: String)
     case submitOrder(cartId: String)
+    case cartDetails
+    case addCartItem(item: APIAddCartItem)
+    case updateCartItem(item: APIUpdateCartItemQuantity)
+    case removeCartItem(id: String)
 }
 
 extension CXTargetType: TargetType, AccessTokenAuthorizable {
@@ -52,17 +56,27 @@ extension CXTargetType: TargetType, AccessTokenAuthorizable {
             return "my_orders/\(orderId).json"
         case let .submitOrder(cartId):
             return "my_orders/\(cartId)/submit.json"
+        case let .cartDetails:
+            return "cart.json"
+        case let .addCartItem:
+            return "/order_line_items.json"
+        case let .updateCartItem(item):
+            return "/order_line_items/\(item.lineItemId).json"
+        case let .removeCartItem(id):
+            return "/order_line_items\(id).json"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getToken, .submitOrder:
+        case .getToken, .submitOrder, .addCartItem:
             return .post
-        case .redeemRewards:
+        case .redeemRewards, .updateCartItem:
             return .patch
-        case .rewards, .rewardDetail, .redeemHistory, .products, .productDetail, .orders, .orderDetail:
+        case .rewards, .rewardDetail, .redeemHistory, .products, .productDetail, .orders, .orderDetail, .cartDetails:
             return .get
+        case .removeCartItem:
+            return .delete
         }
     }
 
