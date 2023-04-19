@@ -52,6 +52,7 @@ public final class NimbleLoyalty {
     private let rewardRepository = RewardRepository()
     private let productRepository = ProductRepository()
     private let orderRepository = OrderRepository()
+    private let cartRepository = CartRepository()
 
     private init() {}
 
@@ -230,6 +231,71 @@ extension NimbleLoyalty {
             switch result {
             case let .success(orderDetails):
                 completion(.success(orderDetails))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+}
+
+//MARK: Cart functions
+
+extension NimbleLoyalty {
+    
+    public func getCartDetails(_ completion: @escaping (Result<APICart, NimbleLoyaltyError>) -> Void) {
+        guard isAuthenticated() else {
+            completion(.failure(NimbleLoyaltyError.unauthenticated))
+            return
+        }
+        cartRepository.getCartDetails { result in
+            switch result {
+            case let .success(cart):
+                completion(.success(cart))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    public func addCartItem(item: APIAddCartItem, _ completion: @escaping (Result<APICart, NimbleLoyaltyError>) -> Void) {
+        guard isAuthenticated() else {
+            completion(.failure(NimbleLoyaltyError.unauthenticated))
+            return
+        }
+        cartRepository.addCartItem(item: item) { result in
+            switch result {
+            case let .success(cart):
+                completion(.success(cart))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    public func updateCartItem(item: APIUpdateCartItemQuantity, _ completion: @escaping (Result<APICart, NimbleLoyaltyError>) -> Void) {
+        guard isAuthenticated() else {
+            completion(.failure(NimbleLoyaltyError.unauthenticated))
+            return
+        }
+        cartRepository.updateCartItem(item: item) { result in
+            switch result {
+            case let .success(cart):
+                completion(.success(cart))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    public func removeCartItem(id: String, _ completion: @escaping (Result<APICart, NimbleLoyaltyError>) -> Void) {
+        guard isAuthenticated() else {
+            completion(.failure(NimbleLoyaltyError.unauthenticated))
+            return
+        }
+        cartRepository.removeCartItem(id: id) { result in
+            switch result {
+            case let .success(cart):
+                completion(.success(cart))
             case let .failure(error):
                 completion(.failure(error))
             }
