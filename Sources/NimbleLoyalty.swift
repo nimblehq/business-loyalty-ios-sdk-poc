@@ -51,6 +51,7 @@ public final class NimbleLoyalty {
     private let sessionManager = AuthenticationSessionManager()
     private let rewardRepository = RewardRepository()
     private let productRepository = ProductRepository()
+    private let orderRepository = OrderRepository()
 
     private init() {}
 
@@ -84,7 +85,12 @@ extension NimbleLoyalty {
     public func clearSession() {
         sessionManager.clearSession()
     }
+}
 
+//MARK: Reward functions
+
+extension NimbleLoyalty {
+    
     public func getRewardList(_ completion: @escaping (Result<APIRewardList, NimbleLoyaltyError>) -> Void) {
         guard isAuthenticated() else {
             completion(.failure(NimbleLoyaltyError.unauthenticated))
@@ -144,6 +150,11 @@ extension NimbleLoyalty {
             }
         }
     }
+}
+
+//MARK: Product functions
+
+extension NimbleLoyalty {
     
     public func getProductList(_ completion: @escaping (Result<[APIProduct], NimbleLoyaltyError>) -> Void) {
         guard isAuthenticated() else {
@@ -176,4 +187,52 @@ extension NimbleLoyalty {
     }
 }
 
+//MARK: Order functions
 
+extension NimbleLoyalty {
+    
+    public func getOrderList(_ completion: @escaping (Result<[APIOrder], NimbleLoyaltyError>) -> Void) {
+        guard isAuthenticated() else {
+            completion(.failure(NimbleLoyaltyError.unauthenticated))
+            return
+        }
+        orderRepository.getOrderList { result in
+            switch result {
+            case let .success(orderList):
+                completion(.success(orderList))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    public func getOrderDetails(orderId: String, _ completion: @escaping (Result<APIOrderDetails, NimbleLoyaltyError>) -> Void) {
+        guard isAuthenticated() else {
+            completion(.failure(NimbleLoyaltyError.unauthenticated))
+            return
+        }
+        orderRepository.getOrderDetails(orderId: orderId) { result in
+            switch result {
+            case let .success(orderDetails):
+                completion(.success(orderDetails))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    public func getOrderDetails(cartId: String, _ completion: @escaping (Result<APIOrderDetails, NimbleLoyaltyError>) -> Void) {
+        guard isAuthenticated() else {
+            completion(.failure(NimbleLoyaltyError.unauthenticated))
+            return
+        }
+        orderRepository.submitOrder(cartId: cartId) { result in
+            switch result {
+            case let .success(orderDetails):
+                completion(.success(orderDetails))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
+}
