@@ -221,7 +221,7 @@ extension NimbleLoyalty {
         }
     }
     
-    public func getOrderDetails(cartId: String, _ completion: @escaping (Result<APIOrderDetails, NimbleLoyaltyError>) -> Void) {
+    public func submitOrder(cartId: String, _ completion: @escaping (Result<APIOrderDetails, NimbleLoyaltyError>) -> Void) {
         guard isAuthenticated() else {
             completion(.failure(NimbleLoyaltyError.unauthenticated))
             return

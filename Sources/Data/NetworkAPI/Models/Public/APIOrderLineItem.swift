@@ -18,7 +18,7 @@ public struct APIOrderLineItem: Decodable, Hashable {
     public var tax: String?
     public var finalPrice: String?
     public var netPrice: String?
-    public var quantity: String?
+    public var quantity: Int?
     public var status: String?
     public var createdAt: String?
     public var updatedAt: String?
