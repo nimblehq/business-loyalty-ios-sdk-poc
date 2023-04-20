@@ -47,11 +47,11 @@ extension CXTargetType: TargetType, AccessTokenAuthorizable {
         case let .productDetail(code):
             return "products/\(code).json"
         case let .orders:
-            return "my_orders.json"
+            return "orders.json"
         case let .orderDetail(orderId):
-            return "my_orders/\(orderId).json"
+            return "orders/\(orderId).json"
         case let .submitOrder(cartId):
-            return "my_orders/\(cartId)/submit.json"
+            return "orders/\(cartId)/submit.json"
         }
     }
 
