@@ -23,6 +23,7 @@ public struct APIOrderLineItem: Decodable, Hashable {
     public var createdAt: String?
     public var updatedAt: String?
     public var orderId: String?
+    public var product: APIProduct?
     
     public static func == (lhs: APIOrderLineItem, rhs: APIOrderLineItem) -> Bool {
         lhs.id == rhs.id
