@@ -32,6 +32,10 @@ final class ProductDetailViewModel: ObservableObject {
             }
         }
     }
+    
+    func addToCart() {
+        print("add to cart")
+    }
 }
 
 extension ProductDetailViewModel {

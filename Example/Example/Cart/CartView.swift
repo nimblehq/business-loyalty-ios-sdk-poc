@@ -36,6 +36,10 @@ struct CartView: View {
         }
     }
     
+    func deleteItems(at offsets: IndexSet) {
+        viewModel.cart?.orderLineItems?.remove(atOffsets: offsets)
+    }
+    
     private func setUpView(isLoading: Bool = false) -> some View {
         VStack {
             ScrollView {
@@ -46,18 +50,43 @@ struct CartView: View {
                             .frame(maxHeight: .infinity, alignment: .center)
                     }
                 } else {
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+                    VStack(spacing: 8.0) {
+                        Spacer()
                         ForEach(viewModel.cart?.orderLineItems ?? [], id: \.self) { lineItem in
-                            NavigationLink(
-                                destination: ProductDetailView(id: lineItem.productId ?? "")
-                            ) {
-                                CartItemView(item: lineItem, useAction: {
-                                    print("cart item action")
-                                })
+                            CartItemView(item: lineItem, useAction: {
+                                print("cart item action")
+                            })
+//                            .frame(minHeight: 90.0)
+                        }
+                        VStack(spacing: 8.0) {
+                            HStack {
+                                Text("Subtotal")
+                                    .font(.system(size: 13.0))
+                                Spacer()
+                                Text("\(viewModel.cart?.subtotalPrice ?? "") SGD")
+                                    .font(.system(size: 13.0))
+                            }
+                            HStack {
+                                Text("Shipment cost")
+                                    .font(.system(size: 13.0))
+                                Spacer()
+                                Text("\(viewModel.cart?.shipmentCost ?? "") SGD")
+                                    .font(.system(size: 13.0))
+                            }
+                            HStack {
+                                Text("Total")
+                                    .font(.system(size: 14.0))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Constants.Color.mirageBlack)
+                                Spacer()
+                                Text("\(viewModel.cart?.finalPrice ?? "") SGD")
+                                    .font(.system(size: 14.0))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Constants.Color.mirageBlack)
                             }
                         }
+                        .padding(.horizontal, 15.0)
                     }
-                    .padding(.horizontal)
                 }
             }
         }
@@ -99,42 +128,31 @@ struct CartItemView: View {
     var useAction: () -> Void
     var body: some View {
         VStack(spacing: 16.0) {
-            HStack(alignment: .center, spacing: 16.0) {
+            HStack(alignment: .top, spacing: 16.0) {
                 KFImage(URL(string: item.product?.imageUrl ?? ""))
                     .onFailureImage(UIImage(named: "logo_square"))
                     .resizable()
-                    .frame(width: 56.0, height: 56.0)
+                    .frame(width: 72.0, height: 72.0)
                     .cornerRadius(4.0)
                 VStack(alignment: .leading, spacing: 4.0) {
-                    Text(item.product?.name ?? "")
+                    HStack(alignment: .center) {
+                        Text("x\(item.quantity ?? 0)")
+                            .font(.system(size: 12.0))
+                            .foregroundColor(Constants.Color.slateGray)
+                        Text(item.product?.name ?? "")
+                            .font(.system(size: 14.0))
+                            .fontWeight(.medium)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(Constants.Color.mirageBlack)
+                            .lineLimit(2)
+                    }
+                    Text("\(item.finalPrice ?? "") SGD")
                         .font(.system(size: 13.0))
                         .fontWeight(.bold)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
                         .foregroundColor(Constants.Color.mirageBlack)
-                        .lineLimit(2)
-//                    Text("Until \(reward.reward?.expiresOn?.formatDate() ?? "")")
-//                        .font(.system(size: 13.0))
-//                        .frame(maxWidth: .infinity, alignment: .leading)
-//                        .foregroundColor(Constants.Color.slateGray)
-//                        .lineLimit(1)
+                        .lineLimit(1)
                 }
-                Spacer(minLength: 0.0)
-                Button(action: {
-                    useAction()
-                }) {
-                    HStack {
-                        Spacer()
-                        Text("Use")
-                            .font(.system(size: 14.0))
-                            .fontWeight(.bold)
-                            .foregroundColor(Constants.Color.havelockBlue)
-                        Spacer()
-                    }
-                }
-                .frame(width: 52.0, height: 32.0)
-                .background(Color.white)
-                .border(Constants.Color.catskillWhite, width: 1.0)
-                .cornerRadius(4.0)
             }
             .padding(.horizontal, 15.0)
             Divider()
@@ -142,6 +160,7 @@ struct CartItemView: View {
                 .background(Constants.Color.catskillWhite)
                 .padding(.horizontal, 15.0)
         }
-        .frame(height: 72.0)
+        .frame(height: 90.0)
     }
 }
+

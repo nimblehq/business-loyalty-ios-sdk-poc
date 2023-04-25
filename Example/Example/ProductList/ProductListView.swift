@@ -13,6 +13,7 @@ struct ProductListView: View {
 
     @Environment(\.presentationMode) var presentationMode
     @StateObject private var viewModel = ProductListViewModel()
+    @State var showCartView = false
 
     var body: some View {
         switch viewModel.state {
@@ -75,6 +76,13 @@ struct ProductListView: View {
                         .foregroundColor(Constants.Color.havelockBlue)
                         .frame(height: 24.0)
                         .padding(.vertical, 20.0)
+                }
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                NavigationLink(destination: CartView(), isActive: $showCartView) {
+                    CartButton {
+                        showCartView.toggle()
+                    }
                 }
             }
         }
