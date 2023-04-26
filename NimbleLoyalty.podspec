@@ -1,4 +1,4 @@
-Pod::Spec.new do |s|  
+Pod::Spec.new do |s|
   s.name                  = 'NimbleLoyalty'
   s.version               = '0.2.0'
   s.summary               = 'A SDK supports Loyalty programm'
