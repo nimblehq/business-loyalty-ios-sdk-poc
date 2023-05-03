@@ -262,7 +262,7 @@ NimbleLoyalty.shared.getCartDetails { result in
 Adds an item to the cart.
 
 ```swift
-NimbleLoyalty.shared.addCartItem(item: APIAddCartItem(productId: "order_id", quantity: 2)) { result in
+NimbleLoyalty.shared.addCartItem(item: APIAddCartItem(productId: "product_id", quantity: 2)) { result in
    switch result {
    case .success(let cart):
        // Display the cart details to the user
