@@ -232,7 +232,7 @@ NimbleLoyalty.shared.getOrderDetails(orderId: "order_id") { result in
 Submits the order.
 
 ```swift
-NimbleLoyalty.shared.submitOrder(cart_id: "cart_id") { result in
+NimbleLoyalty.shared.submitOrder(cartId: "cart_id") { result in
    switch result {
    case .success(let orderDetails):
        // Display the order details to the user
