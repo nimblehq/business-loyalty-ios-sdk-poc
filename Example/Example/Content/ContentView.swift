@@ -15,6 +15,15 @@ struct ContentView: View {
     @State var showRewardListView = false
     @State var showRewardHistoryView = false
     @State var showProductListView = false
+    @State var showCartView = false
+    
+    
+    init(forPreview: Bool = false) {
+        guard forPreview else { return }
+        let viewModel = ContentViewModel()
+        viewModel.state = .authenticated
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
         switch viewModel.state {
@@ -113,6 +122,15 @@ struct ContentView: View {
                 Spacer()
             }
             .padding(.horizontal, 40.0)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: CartView(), isActive: $showCartView) {
+                        CartButton {
+                            showCartView.toggle()
+                        }
+                    }
+                }
+            }
         }
         .accentColor(Constants.Color.mirageBlack)
     }
@@ -121,6 +139,6 @@ struct ContentView: View {
 struct ContentViewPreView: PreviewProvider {
 
     static var previews: some View {
-        ContentView()
+        ContentView(forPreview: true)
     }
 }

@@ -7,6 +7,7 @@
 
 import Combine
 import NimbleLoyalty
+import SwiftUI
 
 final class ContentViewModel: ObservableObject {
 

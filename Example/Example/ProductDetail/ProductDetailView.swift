@@ -82,6 +82,15 @@ struct ProductDetailView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .foregroundColor(Constants.Color.slateGray)
                             .padding(.horizontal, 15.0)
+                        Spacer()
+                        PrimaryButton(
+                            isEnabled: .constant(true),
+                            isLoading: false,
+                            action: {
+                                viewModel.addToCart()
+                            },
+                            title: "Add to cart"
+                        )
                     }
                 }
             }
