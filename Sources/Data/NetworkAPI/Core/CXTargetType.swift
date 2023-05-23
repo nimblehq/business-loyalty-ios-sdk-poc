@@ -17,6 +17,9 @@ enum CXTargetType: Equatable {
     case redeemHistory
     case products
     case productDetail(id: String)
+    case orders
+    case orderDetail(orderId: String)
+    case submitOrder(cartId: String)
 }
 
 extension CXTargetType: TargetType, AccessTokenAuthorizable {
@@ -43,16 +46,22 @@ extension CXTargetType: TargetType, AccessTokenAuthorizable {
             return "products.json"
         case let .productDetail(code):
             return "products/\(code).json"
+        case let .orders:
+            return "orders.json"
+        case let .orderDetail(orderId):
+            return "orders/\(orderId).json"
+        case let .submitOrder(cartId):
+            return "orders/\(cartId)/submit.json"
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .getToken:
+        case .getToken, .submitOrder:
             return .post
         case .redeemRewards:
             return .patch
-        case .rewards, .rewardDetail, .redeemHistory, .products, .productDetail:
+        case .rewards, .rewardDetail, .redeemHistory, .products, .productDetail, .orders, .orderDetail:
             return .get
         }
     }

@@ -194,6 +194,54 @@ NimbleLoyalty.shared.getProductDetail(id: "product_id") { result in
 }
 ```
 
+#### Get Order List
+
+Retrieves the list of orders.
+
+```swift
+NimbleLoyalty.shared.getOrderList { result in
+   switch result {
+   case .success(let orders):
+       // Display the list of orders to the user
+       for order in orders {
+           print("Order id: \(order.id)")
+       }
+   case .failure(let error):
+       print("Error retrieving order list: \(error.localizedDescription)")
+   }
+}
+```
+
+#### Get Order Details
+
+Retrieves the order details.
+
+```swift
+NimbleLoyalty.shared.getOrderDetails(orderId: "order_id") { result in
+   switch result {
+   case .success(let orderDetails):
+       // Display the order details to the user
+   case .failure(let error):
+       print("Error retrieving order details: \(error.localizedDescription)")
+   }
+}
+```
+
+#### Submit order
+
+Submits the order.
+
+```swift
+NimbleLoyalty.shared.submitOrder(cartId: "cart_id") { result in
+   switch result {
+   case .success(let orderDetails):
+       // Display the order details to the user
+   case .failure(let error):
+       print("Error submiting order: \(error.localizedDescription)")
+   }
+}
+```
+
 ## Samples
 
 1. Navigate to the Example folder.
